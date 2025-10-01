@@ -1,0 +1,76 @@
+.why-dubai-section {
+  .content-blk {
+    background-color: unset;
+  }
+
+  .why-dubai-outer {
+    .why-dubai-bg {
+      background-image: url('../../public/assets/why-dubai.png');
+      width: 100%;
+      height: 993px;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      .whydubaiswipper {
+        margin-top: 345px;
+
+        .swiper-slide {
+          background: #fff;
+          border-radius: 6px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+          min-height: 180px;
+          padding: 20px;
+          position: relative;
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: space-between;
+
+          // Blue dot
+          &::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 8px;
+            height: 8px;
+            background: #0071ce;
+            border-radius: 50%;
+          }
+
+          // Slide text
+          p {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0;
+            max-width: 80%;
+          }
+
+          // Thumbnail bottom-right
+          img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            align-self: flex-end;
+            margin-top: 15px;
+          }
+        }
+
+        // Pagination dots
+        .swiper-pagination {
+          margin-top: 40px;
+          text-align: center;
+
+          .swiper-pagination-bullet {
+            background: #0071ce;
+            opacity: 0.4;
+
+            &.swiper-pagination-bullet-active {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

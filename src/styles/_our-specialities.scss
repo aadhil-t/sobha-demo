@@ -1,0 +1,113 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+@import '../styles/fonts';
+
+.our-specialities-section {
+  background-color: rgba(255, 255, 255, 1);
+
+  .content-blk {
+    background-color: #fff;
+    padding: 4rem 1rem;  // adjust as needed
+    display: flex;
+    justify-content: center;
+  }
+
+  .specialities-outer {
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding-top: 12.0rem;
+      border: 0;
+      @media (max-width: 768px) {
+        padding-top: 3rem;
+        
+      }
+      .feature-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;  // same padding all around
+        text-align: center;
+        // subtle inner borders
+        border-right: 1px solid #dcdcdc;  // light grey
+        border-bottom: 1px solid #dcdcdc;
+
+        // For items on the right edge, remove right border
+        &:nth-child(3n) {
+          border-right: none;
+        }
+        // For items in the last row, remove bottom border
+        &:nth-child(n + 4) {  // since 6 total, last row starts from item 4
+          border-bottom: none;
+        }
+
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        // &:hover {
+        //   transform: translateY(-5px);
+        //   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        // }
+
+        img {
+            width: 64px;
+            height: 55px;
+          margin-bottom: 1rem;
+        }
+
+        p {
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 2.4rem;
+            line-height: 3rem;
+            letter-spacing: 0%;
+            text-align: center;
+            max-width: 30rem;
+            color: $text-color-2;
+        }
+      }
+    }
+  }
+
+  // Responsive behavior
+  @media (max-width: 768px) {
+    .specialities-outer {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        .feature-item {
+          // adjust nth-child for 2 columns
+          &:nth-child(1n) {
+            border-right: none;
+            // border-bottom: 1px solid #dcdcdc;
+            // border-left: 1px solid #dcdcdc;
+          }
+          &:nth-child(2n) {
+            border-right: none;
+            border-bottom: 1px solid #dcdcdc;
+            border-left: 1px solid #dcdcdc;
+          }
+          // items in last row: remove bottom border
+          // e.g if 6 items, rows = 3, so items 5 & 6 in last row
+          &:nth-child(n + 5) {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .specialities-outer {
+      .features-grid {
+        grid-template-columns: 1fr;
+
+        .feature-item {
+          border-right: none;  // single column
+          border-left: none !important;  // single column
+          border-bottom: 1px solid #dcdcdc !important;
+        }
+      }
+    }
+  }
+}

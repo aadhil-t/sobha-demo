@@ -1,0 +1,127 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+@import '../styles/fonts';
+
+.our-project-section {
+      background: rgba(247, 250, 252, 1);
+  .project-outer {
+    max-width: 1281px; // total width
+    margin: 0 auto;
+
+    // Top section
+    .project-top-sec {
+      display: flex;
+      padding-top: 6.1rem;
+      padding-bottom: 8rem;
+      gap: 20px;
+
+      .project-top-blk {
+        flex: 0 0 auto;
+
+        .project-img {
+          img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+        }
+
+        .project-text {
+          h4 {
+            font-weight: 400;
+            font-size: 2.4rem;
+            line-height: 3rem;
+            letter-spacing: 0%;
+            margin: 0;
+            color: $text-color-2;
+          }
+          p {
+            font-family: "Raleway";
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 18px;
+            line-height: 30px;
+            letter-spacing: 0%;
+            margin: 0;
+            color: $text-color-80;
+          }
+          h5 {
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 2rem;
+            line-height: 3rem;
+            letter-spacing: 0%;
+            margin: 0;
+            color: $secondary-color;
+          }
+        }
+      }
+
+      // first block
+      .project-top-blk:first-child {
+        width: calc((738 / 1281) * 100%);
+      }
+
+      // second block
+      .project-top-blk:nth-child(2) {
+        width: calc((523 / 1281) * 100%);
+      }
+    }
+
+    // Bottom grid section
+    .project-btm-sec {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+        row-gap: 80px; 
+
+      .project-btm-blk {
+        background: rgba(247, 250, 252, 1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        .project-img {
+          img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+        }
+
+        .project-text {
+          h4 {
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 2rem;
+            line-height: 3rem;
+            letter-spacing: 0%;
+            margin: 0;
+            color: $text-color-2;
+          }
+          p {
+            font-family: "Raleway";
+            font-weight: 500;
+            font-style: Medium;
+            line-height: 3rem;
+            letter-spacing: 0%;
+            margin: 0;
+            color: $text-color-80;
+          }
+          h5 {
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 2rem;
+            line-height: 3rem;
+            letter-spacing: 0%;
+            margin: 0;
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}

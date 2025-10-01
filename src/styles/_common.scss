@@ -1,0 +1,62 @@
+@import './variables';
+
+.eqn-btn {
+  .enquire-btn {
+    text-decoration: none;
+    background-color: $black;
+    color: $primary-color; // white text
+    padding: 16px 28px;
+    border-radius: 8px;
+    transition: all 0.3s ease; // smooth transition
+
+    &:hover {
+      background-color: $primary-color; // white background
+      color: $black; // black text
+      transform: translateY(-2px); // subtle lift effect
+    }
+  }
+}
+
+
+.content-blk{ 
+  background-color: rgba(247, 250, 252, 1);
+  .content-section{
+    padding-top: 10rem;
+    display: flex;
+    // justify-content: space-between;
+    gap: 120px;
+    @media (max-width: 1024px) {
+        gap: 60px;
+    }
+    @media (max-width: 800px) {
+        flex-wrap: wrap;
+        padding-top: 3rem;
+        gap: 30px;
+    }
+    @media (max-width: 500px) {
+        gap: 30px;
+        padding-top: 5rem;
+        flex-wrap: wrap;
+    }
+  }
+  .head{
+      display: flex;
+      flex-direction: column;  
+      padding-top: 2.1rem;
+      h5{
+          margin: 0;
+      }             
+      h2{
+          margin: 0;
+      } 
+  }
+  .cnt{
+    display: flex;
+    align-items: flex-end;
+  }
+  P{
+      max-width: 53rem;
+      margin: 0;
+      text-align: left;
+  }
+}

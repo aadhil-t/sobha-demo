@@ -1,0 +1,224 @@
+@import "../styles/variables";
+
+.footer {
+  background: white;
+
+  .foot-outer {
+    .logo-wrappper {
+      .logo-blk {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 6rem;
+        padding-bottom: 4.5rem;
+
+        h4 {
+          font-size: 2.4rem;
+          max-width: 38rem;
+          color: $secondary-color;
+        }
+      }
+    }
+
+    .topSection {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 7rem;
+      border-top: $border;
+
+      .contact, .projects, .social {
+        p {
+          font-family: "Raleway";
+          font-weight: 600;
+          font-style: SemiBold;
+          font-size: 20px;
+          line-height: 30px;
+          letter-spacing: 0%;
+          padding-bottom: 2rem;
+          margin: 0;
+          color: $text-color;
+        }
+      }
+
+      .contact {
+        .contact-item {
+          padding-bottom: 2rem;
+          display: flex;
+          gap: 1rem;
+          span{
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 17px;
+            line-height: 20px;
+            letter-spacing: 0%;
+            color: $text-color-80;
+          }
+        }
+      }
+
+      .projects {
+        .project-blk {
+          display: flex;
+          gap: 56px;
+
+          .pro-ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+              padding-bottom: 2rem;
+              color: $text-color-80;
+              font-family: Archivo;
+              font-weight: 400;
+              font-style: Regular;
+              font-size: 17px;
+              line-height: 40px;
+              letter-spacing: 0%;
+            }
+          }
+        }
+      }
+
+      .social {
+        .socialIcons {
+          display: flex;
+          align-items: center;
+          gap: 2.623rem;
+        }
+      }
+    }
+
+    .disclaimer {
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+      border-bottom: $border;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 13px;
+      line-height: 20px;
+      letter-spacing: 0%;
+      color: $text-color;
+      strong{
+        font-family: Archivo;
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: 15px;
+        line-height: 20px;
+        letter-spacing: 0%;
+        color: $text-color;
+      }
+    }
+
+    .bottomBar {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      color: $text-color ;
+      span{
+        font-family: "Raleway";
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 0%;
+        color: $text-color;
+      }
+      a{
+        color: $text-color;
+        text-decoration: none;
+      }
+      .bottomBar-privacy{
+        a{
+          font-family: "Raleway";
+          font-weight: 400;
+          font-style: Regular;
+          font-size: 1.6rem;
+          line-height: 3rem;
+          letter-spacing: 0%;
+        }
+      }
+    }
+  }
+
+  // 📱 Mobile (<768px)
+  @media (max-width: 768px) {
+    .foot-outer {
+      .logo-wrappper {
+        .logo-blk {
+          flex-direction: column;
+          align-items: flex-start;
+          padding-top: 4rem;
+          padding-bottom: 3rem;
+          gap: 3rem;
+          h4 {
+            font-size: 2rem;
+            max-width: 100%;
+          }
+        }
+      }
+
+      .topSection {
+        flex-direction: column;
+        gap: 4rem;
+        padding-top: 5rem;
+
+        .projects {
+          .project-blk {
+            flex-direction: column;
+            gap: 2rem;
+          }
+        }
+
+        .social {
+          .socialIcons {
+            flex-wrap: wrap;
+            gap: 1.5rem;
+          }
+        }
+      }
+
+      .bottomBar {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+        }
+
+      .disclaimer {
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+      }
+    }
+  }
+
+  // 💻 Tablet (768px - 1024px)
+  @media (max-width: 1024px) {
+    .foot-outer {
+      .topSection {
+        flex-direction: column;
+        gap: 5rem;
+        padding-top: 6rem;
+
+        .projects {
+          .project-blk {
+            flex-direction: row;
+            gap: 3rem;
+            flex-wrap: wrap;
+          }
+        }
+
+        .social {
+          .socialIcons {
+            gap: 2rem;
+          }
+        }
+      }
+
+      .bottomBar {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  }
+}
+  
