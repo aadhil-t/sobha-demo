@@ -1,3 +1,5 @@
+@import "./variables";
+
 .why-dubai-section {
   .content-blk {
     background-color: unset;
@@ -43,6 +45,7 @@
             font-weight: 500;
             margin: 0;
             max-width: 80%;
+            color: $text-color-2;
           }
 
           // Thumbnail bottom-right
@@ -60,6 +63,7 @@
         .swiper-pagination {
           margin-top: 40px;
           text-align: center;
+          display: none;
 
           .swiper-pagination-bullet {
             background: #0071ce;

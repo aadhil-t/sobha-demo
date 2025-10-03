@@ -1,7 +1,9 @@
+@import "./variables";
 .dream-home-section {
   position: relative;
   height: 697px;
   background-color: #FFFFFF;
+  border-bottom: $border;
   @media (max-width: 1024px) {
     height: auto;
   }
@@ -29,10 +31,13 @@
 
       .dream-home-text {
         max-width: 515px;
-
+        h2{
+          color: $text-color;
+        }
         p{
             margin: 0;
             padding-bottom: 4rem;
+            color: $text-color-80;
         }
     
         button {

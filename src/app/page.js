@@ -7,6 +7,7 @@ import "../styles/_our-project.scss";
 import "../styles/_our-specialities.scss";
 import "../styles/_why-dubai.scss";
 import "../styles/_dream-home.scss";
+import "../styles/_enq-today.scss";
 import "../styles/_faq.scss";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination } from 'swiper/modules';
@@ -334,7 +335,11 @@ export default function Home() {
                 <div className="faq-answer">
                   <p>
                     For a strong asset where its unique theme, robust infrastructure, branded housing experience,
-                    manageable & well functional property and more are going to make it a first choice...
+                    manageable & well functional property and more are going to make it a first choice of residents 
+                    where young couples, families and investors will find this a perfect fit, so it turns out to be 
+                    a lucrative property with rental yields and capital appreciation. And other than this, in Dubai, 
+                    apartments are always in demand because they are comparatively affordable, and then they are easy 
+                    to manage, so this way its high demand will always add a strong perk to the property.
                   </p>
                 </div>
               </div>
@@ -370,8 +375,16 @@ export default function Home() {
         </div>
       </section>
 
-
-
+      {/* Enquire Section */}
+      <div className="enquire-section">
+        <div className="overlay">
+          <div className="content">
+            <h1>Enquire Today!</h1>
+            <p>Our team will reach out with all the information you need</p>
+            <a href="" className="contact-btn">Contact Now</a>
+          </div>
+        </div>
+      </div>
 
     </main>
   );

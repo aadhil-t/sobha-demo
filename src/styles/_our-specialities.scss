@@ -18,9 +18,10 @@
       grid-template-columns: repeat(3, 1fr);
       padding-top: 12.0rem;
       border: 0;
+      padding-bottom: 12rem;
       @media (max-width: 768px) {
         padding-top: 3rem;
-        
+        padding-bottom: 3rem;
       }
       .feature-item {
         display: flex;

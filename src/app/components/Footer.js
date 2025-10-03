@@ -18,13 +18,19 @@ export default function Footer() {
 
             <div className="contact">
               <p>Sales Enquiry</p>
-              <div className='contact-item'>
+
+              <div className="contact-item">
                 <img src="/assets/icons/call-icon.svg" alt="Phone" />
-                <span>+971 800 999 999</span>
+                <a href="tel:+971800999999" target="_blank" rel="noopener noreferrer">
+                  +971 800 999 999
+                </a>
               </div>
-              <div className='contact-item'>
+
+              <div className="contact-item">
                 <img src="/assets/icons/message-icon.svg" alt="Email" />
-                <span>hello@sobharealty.com</span>
+                <a href="mailto:hello@sobharealty.com" target="_blank" rel="noopener noreferrer">
+                  hello@sobharealty.com
+                </a>
               </div>
             </div>
           </div>
@@ -33,16 +39,16 @@ export default function Footer() {
             <p>Our Projects</p>
             <div className='project-blk'>
               <ul className='pro-ul'>
-                <li>Sobha The S Tower</li>
-                <li>Sobha Hartland Heights</li>
-                <li>Sobha Waves Heights</li>
-                <li>Sobha Waves Opulence</li>
+                <li><a href="#">Sobha The S Tower</a></li>
+                <li><a href="#">Sobha Hartland Heights</a></li>
+                <li><a href="#">Sobha Waves Heights</a></li>
+                <li><a href="#">Sobha Waves Opulence</a></li>
               </ul>
               <ul className='pro-ul'>
-                <li>Sobha Seahaven</li>
-                <li>SOBHA Marina Dubai</li>
-                <li>Sobha Delphine Beach Residences</li>
-                <li>Sobha Solis</li>
+                <li><a href="#">Sobha Seahaven</a></li>
+                <li><a href="#">SOBHA Marina Dubai</a></li>
+                <li><a href="#">Sobha Delphine Beach Residences</a></li>
+                <li><a href="#">Sobha Solis</a></li>
               </ul>
             </div>
           </div>

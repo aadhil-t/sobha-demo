@@ -73,7 +73,12 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
-        row-gap: 80px; 
+      row-gap: 80px; 
+      padding-bottom: 12rem;
+      @media (max-width: 768px) {
+        padding-bottom: 3rem;
+        
+      }  
 
       .project-btm-blk {
         background: rgba(247, 250, 252, 1);
