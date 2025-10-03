@@ -4,15 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "pages:build":"npx @cloudflare/next-on-pages",
-    "start": "next start",
-    "preview": "npm run pages:build && wrangler pages dev",
-    "deploy": "npm run build && wrangler pages deploy"
-    
+    "build": "next build --turbopack",
+    "start": "next start"
   },
   "dependencies": {
-    "@aws-sdk/core": "^3.901.0",
-    "@opennextjs/cloudflare": "^1.9.1",
     "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
