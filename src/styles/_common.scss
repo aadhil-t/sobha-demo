@@ -50,6 +50,8 @@
       h2{
           margin: 0;
           color: $text-color;
+          max-width: 575px;
+          justify-content: space-between;
       } 
   }
   .cnt{
