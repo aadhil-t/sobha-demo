@@ -3,9 +3,11 @@ import React, { useEffect } from 'react';
 // AOS //
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import FaqSection from '../components/faqSec';
+import EnqSetion from '../components/EnqSec';
 
 export default function product(){
-
+    
       // Aos //
         useEffect(() => {
         AOS.init({
@@ -18,13 +20,21 @@ export default function product(){
     return(
         <main>
             {/* Sub Banner Section */}
-            <div>
-                <div>
-                    <div>
-                        
+            <div className='sub-banner-sec'>
+                <div className='sub-bnr-outer'> 
+                    <div className='container'>
+                        <div>
+
+                        </div>
                     </div>
                 </div>
             </div>
+
+            {/* Faq Section */}
+            <FaqSection/>
+
+            {/* Enquire Section */}
+            <EnqSetion/>
         </main>
     );
 }
