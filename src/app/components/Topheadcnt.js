@@ -7,11 +7,11 @@ export default function TopHeadCnt({ items = [] }) {
     <div className="content-blk ">
       {items.map((item, index) => (
         <div key={index} className="content-section">
-          <div className="head">
+          <div className="head" data-aos="fade-right">
             {item.heading && <h5>{item.heading}</h5>}
             {item.subHeading && <h2>{item.subHeading}</h2>}
           </div>
-          <div className="cnt">
+          <div className="cnt" data-aos="fade-left">
             {item.content && <p>{item.content}</p>}
           </div>
         </div>

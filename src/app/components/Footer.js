@@ -9,14 +9,14 @@ export default function Footer() {
       <div className='container'>
         <div className='logo-wrappper'>
           <div className='logo-blk'>
-              <img src="/assets/icons/sobha-footicon.svg" alt="Phone" />
-              <h4>Looking for the perfect investment? Secure your Sobha residence now.</h4>
+              <img src="/assets/icons/sobha-footicon.svg" data-aos="fade-right" alt="Phone" />
+              <h4 data-aos="fade-left">Looking for the perfect investment? Secure your Sobha residence now.</h4>
           </div>
         </div>
         <div className="topSection">
           <div className="logoSection">
 
-            <div className="contact">
+            <div className="contact" data-aos="fade-up">
               <p>Sales Enquiry</p>
 
               <div className="contact-item">
@@ -35,7 +35,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="projects">
+          <div className="projects" data-aos="fade-up">
             <p>Our Projects</p>
             <div className='project-blk'>
               <ul className='pro-ul'>
@@ -53,7 +53,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="social">
+          <div className="social" data-aos="fade-up">
             <p>Social Links</p>
             <div className="socialIcons">
               <a href="#"><img src="/assets/icons/twitter.svg" alt="X" /></a>
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="disclaimer">
+        <div className="disclaimer" data-aos="fade-up">
           <strong>Disclaimer:</strong> Iaculis aliquam scelerisque odio justo eget justo duis egestas.
           Tristique quis at volutpat nec mi. Faucibus interdum pretium tellus velit purus dui sed tellus. Ac facilisis 
           risus risus at pharetra fringilla integer tellus. Dignissim eget facilisis ac est maecenas egestas ut sed. 

@@ -17,18 +17,78 @@ import 'swiper/css/pagination';
 import { initAccordion } from "../app/faq";
 import Button from "../app/components/EnquireBtn";
 import TopHeadCnt from "../app/components/Topheadcnt";
+// gsap //
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// AOS //
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 export default function Home() {
+  // Accordian //
     useEffect(() => {
     initAccordion();
   }, []);
+
+  // Aos //
+    useEffect(() => {
+    AOS.init({
+      duration: 1200, // animation duration in ms
+      once: false,     // whether animation should happen only once
+      mirror: false,  // whether elements should animate out while scrolling past them
+    });
+  }, []);
+
+  // Mouse Scroll //
+  useEffect(() => {
+    const section = document.querySelector(".why-dubai-section");
+    const swiperWrapper = section.querySelector(".swiper-wrapper");
+    const slides = section.querySelectorAll(".swiper-slide");
+  
+    // Get total width of all slides combined (including margins)
+    let totalWidth = 0;
+    slides.forEach((slide, index) => {
+      const style = window.getComputedStyle(slide);
+      const marginRight = parseFloat(style.marginRight);
+      // Add margin for all slides except last
+      totalWidth += slide.offsetWidth + (index < slides.length - 1 ? marginRight : 0);
+    });
+  
+    // Horizontal scroll: move wrapper right
+    gsap.set(swiperWrapper, { x: 0 });
+  
+      const scrollTween = gsap.to(swiperWrapper, {
+      x: () => totalWidth - window.innerWidth, // move right fully until last slide
+      ease: "none",
+      scrollTrigger: {
+        trigger: section,
+        pin: true,
+        scrub: 1,
+        start: "top top",
+        end: () => `+=${totalWidth}`, // scroll distance matches full width
+        anticipatePin: 1,
+      },
+    });
+  
+    // Cleanup
+    return () => {
+      scrollTween.scrollTrigger?.kill();
+      scrollTween.kill();
+    };
+  }, []);
+  
+
   return (
     <main>
       {/* Banner Section */}
       <div className="home-banner">
         <div className="banner-image">
           <div className="container banner-text">
-            <h1>
+            <h1 data-aos="fade-up">
               Explore An Exclusive Lifestyle in the Heart of <span>Dubai</span>
             </h1>
           </div>
@@ -54,8 +114,8 @@ export default function Home() {
                   }
                 ]}
               />
-              <div className="abt-btm-sec">
-                <div className="abt-stat-blk">
+              <div className="abt-btm-sec" >
+                <div className="abt-stat-blk" data-aos="fade-up">
                   <div className="stat-head">
                     <h2>8M+</h2>
                     <h5>Total Land Area</h5>
@@ -69,7 +129,7 @@ export default function Home() {
                     <h5>Years Experience</h5>
                   </div>
                 </div>
-                <div className="abt-img-blk">
+                <div className="abt-img-blk" data-aos="fade-up">
                   <img
                     className="abt-img"
                     src="/assets/status.png"
@@ -98,7 +158,7 @@ export default function Home() {
             />
 
             <div className="project-top-sec">
-              <div className="project-top-blk">
+              <div className="project-top-blk" data-aos="fade-up">
                 <div className="project-img">
                   <img src="/assets/project1.png" alt="Canalside Marina Residences" />
                 </div>
@@ -109,7 +169,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="project-top-blk">
+              <div className="project-top-blk" data-aos="fade-up">
                 <div className="project-img">
                   <img src="/assets/project2.png" alt="Canalside Marina Residences" />
                 </div>
@@ -121,7 +181,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="project-btm-sec">
+            <div className="project-btm-sec" data-aos="fade-up">
               <div className="project-btm-blk">
                 <div className="project-img">
                   <img src="/assets/btm-pro1.png" alt="Pierside Marina Residences" />
@@ -203,7 +263,7 @@ export default function Home() {
               ]}
             />
 
-            <div className="features-grid">
+            <div className="features-grid" data-aos="fade-up">
               <div className="feature-item">
                 <img src="assets/icons/resort.svg" alt="Resort" />
                 <p>Resort themed facilities & amenities</p>
@@ -255,6 +315,7 @@ export default function Home() {
                 freeMode={true}
                 pagination={{ clickable: true }}
                 className="whydubaiswipper"
+                data-aos="fade-up"
                 breakpoints={{
                     0: {
                       slidesPerView: 1.2,
@@ -299,7 +360,7 @@ export default function Home() {
       <div className="dream-home-section">
         <div className="dream-home-outer">
           <div className="container">
-            <div className="dream-home-blk">
+            <div className="dream-home-blk" data-aos="fade-right">
               <div className="dream-home-text">
                 <h2>Find Your Dream Home Today!</h2>
                 <p>Invest in more than property—invest in your future.</p>
@@ -308,7 +369,7 @@ export default function Home() {
             </div>
           </div>
           {/* Image OUTSIDE the container */}
-          <div className="dream-home-img">
+          <div className="dream-home-img" data-aos="fade-left">
             <img src="/assets/dream-home.png" alt="Dream Home" />
           </div>
         </div>
@@ -319,14 +380,14 @@ export default function Home() {
         <div className="faq-outer">
           <div className="container">
 
-            <div className="faq-header">
+            <div className="faq-header" data-aos="fade-up">
               <span className="dot">.</span>
               <p className="label">FAQ</p>
               <h2>Frequently Asked Questions!</h2>
             </div>
 
             <div className="faq-list">
-              <div className="faq-item">
+              <div className="faq-item" data-aos="fade-right">
                 <div className="faq-question">
                   <span className="number">01.</span>
                   <span className="text">Why should you invest in Sobha Skyvue Stellar?</span>
@@ -344,7 +405,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="faq-item">
+              <div className="faq-item" data-aos="fade-left">
                 <div className="faq-question">
                   <span className="number">02.</span>
                   <span className="text">How life is going to be in Sobha Skyvue Stellar?</span>
@@ -357,7 +418,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="faq-item">
+              <div className="faq-item" data-aos="fade-right">
                 <div className="faq-question">
                   <span className="number">03.</span>
                   <span className="text">What is Sobha Skyvue Stellar?</span>
@@ -378,7 +439,7 @@ export default function Home() {
       {/* Enquire Section */}
       <div className="enquire-section">
         <div className="overlay">
-          <div className="content">
+          <div className="content" data-aos="fade-up">
             <h1>Enquire Today!</h1>
             <p>Our team will reach out with all the information you need</p>
             <a href="" className="contact-btn">Contact Now</a>
