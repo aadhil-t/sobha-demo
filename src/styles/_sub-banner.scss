@@ -1,0 +1,62 @@
+@import "../styles/variables";
+
+.sub-banner-sec {
+  width: 100%;
+  height: auto;
+  max-height: 667;
+  overflow: hidden;
+
+  .sub-bnr-img {
+    position: relative; // Important for overlay positioning
+    height: 667;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    .sub-bnr-txt {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      align-items: center; // vertically center
+      justify-content: start; // horizontally center
+      z-index: 2;
+      top: 70%;
+      h1 {
+          font-weight: 300;
+          font-style: Light;
+          line-height: 100px;
+          letter-spacing: 0%;
+          text-transform: uppercase;
+          color: $primary-color;
+    }
+    }
+
+    // Optional: dark overlay for contrast
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sub-bnr-img {
+      height: 300px;
+
+      .sub-bnr-txt h1 {
+        font-size: 28px;
+      }
+    }
+  }
+}

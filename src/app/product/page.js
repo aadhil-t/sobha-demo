@@ -7,6 +7,7 @@ import "../../styles/_neighbourhood.scss";
 import "../../styles/_additional-info.scss";
 import "../../styles/_nearbtlocation.scss"
 import "../../styles/_hurtland.scss"
+import "../../styles/_sub-banner.scss"
 import FaqSection from "../components/faqSec";
 import EnqSetion from "../components/EnqSec";
 import TopHeadCnt from "../../app/components/Topheadcnt";
@@ -26,9 +27,12 @@ export default function Product() {
     <main>
       {/* Sub Banner Section */}
       <div className="sub-banner-sec">
-        <div className="sub-bnr-outer">
+        <div className="sub-bnr-img">
+            <img src="/assets/product/sub-bnr.png" alt="Skyvue Stellar at Sobha Hartland 2 Dubai"/>
           <div className="container">
-            <div></div>
+            <div className="sub-bnr-txt">
+              <h1>Sky view stellar</h1>
+            </div>
           </div>
         </div>
       </div>
