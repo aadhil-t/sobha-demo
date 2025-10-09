@@ -5,13 +5,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "../../styles/_neighbourhood.scss";
 import "../../styles/_additional-info.scss";
-
+import "../../styles/_nearbtlocation.scss"
+import "../../styles/_hurtland.scss"
 import FaqSection from "../components/faqSec";
 import EnqSetion from "../components/EnqSec";
 import TopHeadCnt from "../../app/components/Topheadcnt";
 
 export default function Product() {
-  // ✅ Initialize AOS
+  // Initialize AOS
   useEffect(() => {
     AOS.init({
       duration: 1200,
@@ -23,7 +24,7 @@ export default function Product() {
 
   return (
     <main>
-      {/* ✅ Sub Banner Section */}
+      {/* Sub Banner Section */}
       <div className="sub-banner-sec">
         <div className="sub-bnr-outer">
           <div className="container">
@@ -31,8 +32,9 @@ export default function Product() {
           </div>
         </div>
       </div>
-
-      {/* ✅ Neighbourhood Section */}
+      
+ 
+      {/* Neighbourhood Section */}
       <div className="neighbourhood-sec">
         <div className="neighbourhood-outer">
           <div className="container">
@@ -47,14 +49,122 @@ export default function Product() {
                 },
               ]}
             />
-            <div className="loc-img">
+            <div className="loc-img" data-aos="fade-up">
               <img src="assets/product/dubai-location.png" alt="Dubai Location" />
             </div>
           </div>
         </div>
       </div>
 
-      {/* ✅ Additional Info Section */}
+      {/* Hurtland Section */}
+      <div className="hurtland-sec">
+        <div className="hurtland-outer">
+          <div className="container">
+            <div className="property-blk">
+              <div className="property-image">
+                <img src="assets/product/stellar.png" alt="Skyvue Stellar at Sobha Hartland 2 Dubai"/>
+              </div>
+
+              <div className="property-details">
+                <h2>Skyvue Stellar at Sobha Hartland 2 Dubai</h2>
+
+                <div className="property-info">
+                  <div className="info-item">
+                    <h3>1.64M</h3>
+                    <p>Starting Price</p>
+                  </div>
+
+                  <div className="info-item">
+                    <h3>1–3BR</h3>
+                    <p>Configuration</p>
+                  </div>
+
+                  <div className="info-item">
+                    <h3>60:40</h3>
+                    <p>Payment Plan</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Grid amenities Section */}
+      <div className="nearby-sec">
+              <div className="nearby-outer">
+                <div className="container">
+                  <div className="nearby-blk">
+                      <div className="location-card">
+                        <div className="icon">
+                          <img src="assets/product/wildlife.svg" alt="Wildlife Sanctuary" />
+                        </div>
+                        <div className="title">Ras Al Khor Wildlife Sanctuary</div>
+                        <div className="time">05 min.</div>
+                      </div>
+
+                      <div className="location-card">
+                        <div className="icon">
+                          <img src="assets/product/meydan.svg" alt="Meydan Racecourse" />
+                        </div>
+                        <div className="title">Meydan Racecourse</div>
+                        <div className="time">10 min.</div>
+                      </div>
+
+                      <div className="location-card">
+                        <div className="icon">
+                          <img src="assets/product/schools.svg" alt="Schools" />
+                        </div>
+                        <div className="title">Sobha Hartland & International Schools</div>
+                        <div className="time">10 min.</div>
+                      </div>
+
+                      <div className="location-card">
+                        <div className="icon">
+                          <img src="assets/product/airport.svg" alt="Dubai Airport" />
+                        </div>
+                        <div className="title">Dubai International Airport</div>
+                        <div className="time">12 min.</div>
+                      </div>
+
+                      <div className="location-card">
+                        <div className="icon">
+                          <img src="assets/product/business.svg" alt="Business Bay" />
+                        </div>
+                        <div className="title">Business Bay</div>
+                        <div className="time">12 min.</div>
+                      </div>
+
+                      <div className="location-card">
+                        <div className="icon">
+                          <img src="assets/product/dubai.svg" alt="Dubai Frame" />
+                        </div>
+                        <div className="title">Dubai Frame</div>
+                        <div className="time">15 min.</div>
+                      </div>
+
+                      <div className="location-card">
+                        <div className="icon">
+                          <img src="assets/product/downtown.svg" alt="Burj Khalifa" />
+                        </div>
+                        <div className="title">Burj Khalifa & Downtown Dubai</div>
+                        <div className="time">15 min.</div>
+                      </div>
+
+                      <div className="location-card">
+                        <div className="icon">
+                          <img src="assets/product/dubai-mall.svg" alt="Dubai Mall" />
+                        </div>
+                        <div className="title">The Dubai Mall</div>
+                        <div className="time">15 min.</div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+      </div>
+     
+
+      {/* Additional Info Section */}
       <div className="additional-sec">
         <div className="additional-outer">
           <div className="container">
@@ -69,7 +179,7 @@ export default function Product() {
             />
 
             <div className="info-card-blk">
-              <div className="info-card">
+              <div className="info-card" data-aos="fade-up">
                 <div className="point-cnt">
                   <h6>It aims to deliver luxury in every corner</h6>
                 </div>
@@ -85,7 +195,7 @@ export default function Product() {
                 </div>
               </div>
 
-              <div className="info-card">
+              <div className="info-card" data-aos="fade-up">
                 <div className="point-cnt">
                   <h6>Part of a family-oriented community</h6>
                 </div>
@@ -101,7 +211,7 @@ export default function Product() {
                 </div>
               </div>
 
-              <div className="info-card">
+              <div className="info-card" data-aos="fade-up">
                 <div className="point-cnt">
                   <h6>Asset in a well-approachable position</h6>
                 </div>
@@ -121,11 +231,12 @@ export default function Product() {
         </div>
       </div>
 
-      {/* ✅ Faq Section */}
+      {/* Faq Section */}
       <FaqSection />
 
-      {/* ✅ Enquire Section */}
+      {/* Enquire Section */}
       <EnqSetion />
+
     </main>
   );
 }
