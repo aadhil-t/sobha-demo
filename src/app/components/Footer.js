@@ -57,7 +57,7 @@ export default function Footer() {
             <p>Social Links</p>
             <div className="socialIcons">
               <a href="#"><img src="/assets/icons/twitter.svg" alt="X" /></a>
-              <a href="#"><img src="/assets/icons/Instagram.svg" alt="Instagram" /></a>
+              <a href="#"><img src="/assets/icons/instagram.svg" alt="Instagram" /></a>
               <a href="#"><img src="/assets/icons/facebook.svg" alt="Facebook" /></a>
               <a href="#"><img src="/assets/icons/youtube.svg" alt="Youtube" /></a>
             </div>
