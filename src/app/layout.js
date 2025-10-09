@@ -2,7 +2,7 @@
 import "./globals.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+import MouseEffect from "../app/components/MouseEffect"
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body >
+        <MouseEffect/>
         <Header />
         {children}
         <Footer />

@@ -1,0 +1,97 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+@import "../styles/fonts";
+
+.additional-sec {
+  background: #ffffff;
+
+  .additional-outer {
+    .info-card-blk {
+      .info-card {
+        display: flex;
+        gap: 6.4rem;
+        padding-top: 4rem;
+        padding-bottom: 8rem;
+        border-top: $border;
+        align-items: flex-start;
+
+        @media (max-width: 1024px) {
+          gap: 3rem;
+          flex-direction: column;
+          padding-top: 3rem;
+          padding-bottom: 4rem;
+          align-items: center;
+        }
+
+        @media (max-width: 768px) {
+          gap: 2rem;
+          padding-top: 2rem;
+        }
+
+        .point-cnt {
+          flex: 0 0 200px;
+
+          @media (max-width: 1024px) {
+            flex: 0 0 auto;
+          }
+
+          h6 {
+            color: $secondary-color;
+            font-size: 1.6rem;
+            font-weight: 600;
+
+            @media (max-width: 768px) {
+              font-size: 1.4rem;
+            }
+          }
+        }
+        
+        .info-img{
+            img{
+                width: 100%;
+            }
+        }
+        .info-cnt {
+          flex: 1;
+
+          p {
+            max-width: 460px;
+            margin: 0;
+            color: $text-color;
+            line-height: 1.6;
+            font-size: 1.6rem;
+
+            @media (max-width: 1024px) {
+              max-width: 100%;
+            }
+
+            @media (max-width: 768px) {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+
+    .content-blk {
+      background: #ffffff;
+
+      .head {
+        h2 {
+          max-width: 100%;
+          padding-bottom: 8rem;
+
+          @media (max-width: 1024px) {
+            padding-bottom: 3rem;
+            font-size: 2.4rem;
+          }
+
+          @media (max-width: 768px) {
+            padding-bottom: 2rem;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 .faq-section {
   padding: 8rem 0;
-  background: white;
+  background: $bg-color;
   text-align: center;
   @media (max-width: 1024px) {
     padding: 3rem 0;
@@ -30,7 +30,7 @@
       letter-spacing: 0%;
       color: $text-color;
       margin-bottom: 7.9rem;
-      @mscm-history-item:c%3A%5Cprojects%5Csobha-nxt%5Csobha?%7B%22repositoryId%22%3A%22scm0%22%2C%22historyItemId%22%3A%22839cbeb75150b1d851a899bef8e0bc11be606d97%22%2C%22historyItemParentId%22%3A%22613a122f3bb6b59f458a5a6429fb042e0e9a5637%22%2C%22historyItemDisplayId%22%3A%22839cbeb%22%7Dedia (max-width: 1024px) {
+      @media (max-width: 1024px) {
         margin-bottom: 3rem;
       }
     }
