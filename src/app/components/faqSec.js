@@ -23,7 +23,7 @@ export default function FaqSection() {
           </div>
 
           <div className="faq-list">
-            <div className="faq-item" data-aos="fade-right">
+            <div className="faq-item active" data-aos="fade-right">
               <div className="faq-question">
                 <span className="number">01.</span>
                 <span className="text">

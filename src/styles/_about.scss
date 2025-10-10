@@ -28,8 +28,10 @@
                     .stat-head{
                         display: flex;
                         align-items: center;
+                        justify-content: space-between;
                         gap: 212px;
                         padding: 50px 0;
+                        color: $secondary-color;
                         @media (max-width: 1190px) {
                             gap: 65px;
                         }

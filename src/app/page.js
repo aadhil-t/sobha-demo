@@ -121,12 +121,12 @@ export default function Home() {
                     <h5>Total Land Area</h5>
                   </div>
                   <div className="stat-head">
-                    <h2>5K+</h2>
-                    <h5>Happy Families</h5>
+                    <h2>12K+</h2>
+                    <h5>Residential Units</h5>
                   </div>
                   <div className="stat-head">
-                    <h2>30+</h2>
-                    <h5>Years Experience</h5>
+                    <h2>39%</h2>
+                    <h5>Open Spaces</h5>
                   </div>
                 </div>
                 <div className="abt-img-blk" data-aos="fade-up">
