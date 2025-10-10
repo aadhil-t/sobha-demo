@@ -47,6 +47,46 @@ export default function Product() {
       </div>
 
       {/* Neighbourhood Section */}
+      <div className="amenities-sec">
+        <div className="amenities-ouetr">
+          <div className="container">
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar]}
+              slidesPerView={1}
+              spaceBetween={30}
+              scrollbar={{
+                el: ".swiper-scrollbar",
+                draggable: true,
+              }}
+              navigation={{
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              }}
+        
+              className="amenitiesSwipper"
+            >
+              <SwiperSlide>
+                <img src="/assets/product/glswip1.png" alt="Living Room" />
+                <p>You can host a variety of events & activities</p>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/assets/product/dubai-location.png" alt="Dubai" />
+                <p>Enjoy a workout in the outerspace</p>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/assets/product/glswip1.png" alt="Living Room 2" />
+                <p>You can host a variety of events & activities</p>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/assets/swip1.png" alt="Sky View" />
+                <p>Enjoy a workout in the outerspace</p>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </div>
+
+      {/* Neighbourhood Section */}
       <div className="neighbourhood-sec">
         <div className="neighbourhood-outer">
           <div className="container">
