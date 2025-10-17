@@ -14,7 +14,7 @@ export default function Header() {
       <div className="container">
         <div className="head-wrapper">
           {/* Left: Logo */}
-          <div className="logo-blk">
+          <div className={`logo-blk ${isMenuOpen ? "menu-open" : ""}`}>
             <Link href="/">
               <img src="/assets/logo-bnr.svg" alt="Sobha Banner" />
             </Link>
@@ -22,10 +22,18 @@ export default function Header() {
 
           {/* Center: Nav links */}
           <nav className={`nav-links-blk ${isMenuOpen ? "open" : ""}`}>
-            <Link href="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              href="/"
+              className="nav-link"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Home
             </Link>
-            <Link href="/about" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              href="/product"
+              className="nav-link"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Projects
             </Link>
             <Button href="/enquire" label="Enquire Now" />

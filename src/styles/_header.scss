@@ -1,9 +1,136 @@
+// .header-sec {
+//   position: absolute; 
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   background: transparent; 
+//   z-index: 1000;
+//   transition: background 0.3s ease;
+
+//   .head-wrapper {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 15px 0;
+//   }
+
+//   /* LOGO */
+//   .logo-blk {
+//     img {
+//       width: 150px;
+//       height: auto;
+//       @media (max-width: 768px) {
+//           width: 100px;
+//       }
+//     }
+//   }
+
+//   /* NAVIGATION */
+//   .nav-links-blk {
+//     display: flex;
+//     align-items: center;
+//     gap: 25px;
+
+//     .nav-link {
+//       color: #fff; 
+//       text-decoration: none;
+//       font-weight: 500;
+//       transition: color 0.3s ease;
+
+//       &:hover {
+//         color: #0070f3;
+//       }
+//     }
+
+//     @media (max-width: 768px) {
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       flex-direction: column;
+//       align-items: center;
+//       gap: 20px;
+//       padding: 123px 0 40px;
+//       background: white; 
+//       transform: translateY(-200%);
+//       opacity: 0;
+//       visibility: hidden;
+//       transition: all 0.3s ease;
+
+//       .nav-link {
+//         color: black;
+//       }
+//     }
+
+//     &.open {
+//       @media (max-width: 768px) {
+//         transform: translateY(0);
+//         opacity: 1;
+//         visibility: visible;
+//       }
+//     }
+//   }
+
+//   /* HAMBURGER ICON */
+//   .hamburger {
+//     display: none;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     width: 25px;
+//     height: 18px;
+//     cursor: pointer;
+//     z-index: 1100;
+
+//     span {
+//       height: 3px;
+//       background: #fff;
+//       border-radius: 2px;
+//       transition: all 0.3s ease;
+//     }
+
+//     &.active span:nth-child(1) {
+//       transform: rotate(45deg) translateY(7px);
+//     }
+
+//     &.active span:nth-child(2) {
+//       opacity: 0;
+//     }
+
+//     &.active span:nth-child(3) {
+//       transform: rotate(-45deg) translateY(-7px);
+//     }
+
+//     @media (max-width: 768px) {
+//       display: flex;
+//     }
+//   }
+
+//   /* Hide nav links by default on mobile */
+//   @media (max-width: 768px) {
+//     .nav-links-blk {
+//       display: none;
+
+//       &.open {
+//         display: flex;
+//       }
+//     }
+//   }
+
+//   .eqn-btn{
+//     @media (max-width: 768px) {
+//         margin-top: 20px;
+//         margin-bottom: 10px;
+//     }
+//   }
+// }
+
+
 .header-sec {
-  position: absolute; 
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent; 
+  background: transparent;
   z-index: 1000;
   transition: background 0.3s ease;
 
@@ -16,11 +143,26 @@
 
   /* LOGO */
   .logo-blk {
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease;
+
     img {
       width: 150px;
       height: auto;
+      filter: invert(0); // White logo by default (transparent background)
+      transition: filter 0.3s ease;
+
       @media (max-width: 768px) {
-          width: 100px;
+        width: 100px;
+      }
+    }
+
+    /* When mobile menu is open */
+    &.menu-open {
+      z-index: 99; // Bring logo above menu
+      img {
+        filter: invert(1); // Normal/dark logo when menu opens
       }
     }
   }
@@ -32,7 +174,7 @@
     gap: 25px;
 
     .nav-link {
-      color: #fff; 
+      color: #fff;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s ease;
@@ -42,16 +184,17 @@
       }
     }
 
+    /* Mobile Menu */
     @media (max-width: 768px) {
       position: absolute;
-      top: 55px;
+      top: 0;
       left: 0;
       width: 100%;
       flex-direction: column;
       align-items: center;
       gap: 20px;
-      padding: 25px 0;
-      background: white; 
+      padding: 123px 0 40px;
+      background: white;
       transform: translateY(-200%);
       opacity: 0;
       visibility: hidden;
@@ -59,6 +202,12 @@
 
       .nav-link {
         color: black;
+        font-family: "Raleway";
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 35px;
+        line-height: 30px;
+        letter-spacing: 0%;
       }
     }
 
@@ -67,6 +216,8 @@
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+        backdrop-filter: blur(0px);
+        background: rgba(255, 255, 255, 0.87);
       }
     }
   }
@@ -90,6 +241,7 @@
 
     &.active span:nth-child(1) {
       transform: rotate(45deg) translateY(7px);
+      background: rgba(29, 29, 27, 1);
     }
 
     &.active span:nth-child(2) {
@@ -98,6 +250,7 @@
 
     &.active span:nth-child(3) {
       transform: rotate(-45deg) translateY(-7px);
+      background: rgba(29, 29, 27, 1);
     }
 
     @media (max-width: 768px) {
@@ -116,10 +269,10 @@
     }
   }
 
-  .eqn-btn{
+  .eqn-btn {
     @media (max-width: 768px) {
-        margin-top: 20px;
-        margin-bottom: 10px;
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
   }
 }

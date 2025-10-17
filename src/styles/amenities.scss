@@ -1,0 +1,17 @@
+@import '../styles/variables';
+
+.amenities-sec {
+  .amenities-outer {
+    .content-blk {
+      background: $primary-color;
+    }
+    .amenitiesSwipper {
+      .swiper-slide {
+        img {
+          width: 100%;
+          max-width: 630px;
+        }
+      }
+    }
+  }
+}

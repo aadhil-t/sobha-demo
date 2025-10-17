@@ -9,6 +9,7 @@ import "../../styles/_nearbtlocation.scss";
 import "../../styles/_hurtland.scss";
 import "../../styles/_sub-banner.scss";
 import "../../styles/_gallery.scss";
+import "../../styles/amenities.scss";
 import FaqSection from "../components/faqSec";
 import EnqSetion from "../components/EnqSec";
 import TopHeadCnt from "../../app/components/Topheadcnt";
@@ -41,142 +42,6 @@ export default function Product() {
           <div className="container">
             <div className="sub-bnr-txt">
               <h1>Sky view stellar</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Neighbourhood Section */}
-      <div className="amenities-sec">
-        <div className="amenities-ouetr">
-          <div className="container">
-            <Swiper
-              modules={[Navigation, Pagination, Scrollbar]}
-              slidesPerView={1}
-              spaceBetween={30}
-              scrollbar={{
-                el: ".swiper-scrollbar",
-                draggable: true,
-              }}
-              navigation={{
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              }}
-        
-              className="amenitiesSwipper"
-            >
-              <SwiperSlide>
-                <img src="/assets/product/glswip1.png" alt="Living Room" />
-                <p>You can host a variety of events & activities</p>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/product/dubai-location.png" alt="Dubai" />
-                <p>Enjoy a workout in the outerspace</p>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/product/glswip1.png" alt="Living Room 2" />
-                <p>You can host a variety of events & activities</p>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/swip1.png" alt="Sky View" />
-                <p>Enjoy a workout in the outerspace</p>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-      </div>
-
-      {/* Neighbourhood Section */}
-      <div className="neighbourhood-sec">
-        <div className="neighbourhood-outer">
-          <div className="container">
-            <TopHeadCnt
-              items={[
-                {
-                  heading: "Neighbourhood",
-                  subHeading:
-                    "Skyvue Stellar at Sobha Hartland 2 Dubai Location",
-                  content: `Sobha Skyvue Stellar is positioned in Sobha Hartland 2 — a community just 15 minutes from Downtown,
-                  Business Bay, Dubai International Airport, and Palm Jumeirah. Its proximity to Mohammed Bin Rashid City (MBR City)
-                  adds extra value, making it a central and well-connected location with high capital appreciation potential.`,
-                },
-              ]}
-            />
-            <div className="loc-img" data-aos="fade-up">
-              <img
-                src="assets/product/dubai-location.png"
-                alt="Dubai Location"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Gallery Section */}
-      <div className="gallery-sec">
-        <div className="gallery-outer">
-          <div className="container">
-            <TopHeadCnt
-              items={[
-                {
-                  heading: "Gallery",
-                  subHeading: "Sobha Skyvue Stellar gallery",
-                  content: `The right spot to grab all the pictures of the project giving an appropriate idea and vibes
-                   of this beautiful development, so look at each of them below`,
-                },
-              ]}
-            />
-            <Swiper
-              modules={[Navigation, Pagination, Scrollbar]}
-              slidesPerView={1}
-              spaceBetween={30}
-              scrollbar={{
-                el: ".swiper-scrollbar",
-                draggable: true,
-              }}
-              navigation={{
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              }}
-              pagination={{
-                type: "fraction",
-                el: ".swiper-pagination",
-                formatFractionCurrent: (num) => `0${num}`,
-                formatFractionTotal: (num) => `0${num}`,
-                renderFraction: (currentClass, totalClass) => `
-            <span class="${currentClass}"></span>
-            /
-            <span class="${totalClass}"></span>
-          `,
-              }}
-              className="gallerySwipper"
-            >
-              <SwiperSlide>
-                <img src="/assets/product/glswip1.png" alt="Living Room" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/product/dubai-location.png" alt="Dubai" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/product/glswip1.png" alt="Living Room 2" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/swip1.png" alt="Sky View" />
-              </SwiperSlide>
-            </Swiper>
-
-            {/* Bottom Controls */}
-            <div className="gallery-controls">
-              <div className="swiper-pagination"></div>
-              <div className="swiper-scrollbar"></div>
-              <div className="swiper-nav">
-                <div className="swiper-button-prev">
-                  <img src="/assets/product/icon-left.svg" alt="Prev" />
-                </div>
-                <div className="swiper-button-next">
-                  <img src="/assets/product/icon-right.svg" alt="Next" />
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -294,6 +159,162 @@ export default function Product() {
                 </div>
                 <div className="title">The Dubai Mall</div>
                 <div className="time">15 min.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Amenities Section */}
+      <div className="amenities-sec">
+        <div className="amenities-outer">
+          <div className="container">
+               <TopHeadCnt
+              items={[
+                {
+                  heading: "Amenities",
+                  subHeading: "A Lifestyle Beyond Expectations",
+                  content: `The right spot to grab all the pictures of the project giving an appropriate idea and vibes
+                   of this beautiful development, so look at each of them below`,
+                },
+              ]}
+            />
+          </div>
+          <div className="">
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar]}
+              slidesPerView={2.5}
+              spaceBetween={20}
+              scrollbar={{
+                el: ".swiper-scrollbar",
+                draggable: true,
+              }}
+              navigation={{
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              }}
+        
+              className="amenitiesSwipper"
+            >
+              <SwiperSlide>
+                <img src="/assets/product/amenities1.png" alt="Living Room" />
+                <p>You can host a variety of events & activities</p>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/assets/product/amenities2.png" alt="Dubai" />
+                <p>Enjoy a workout in the outerspace</p>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/assets/product/amenities3.png" alt="Living Room 2" />
+                <p>You can host a variety of events & activities</p>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/assets/product/amenities1.png" alt="Sky View" />
+                <p>Enjoy a workout in the outerspace</p>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/assets/product/amenities2.png" alt="Dubai" />
+                <p>Enjoy a workout in the outerspace</p>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/assets/product/amenities3.png" alt="Living Room 2" />
+                <p>Enjoy a workout in the outerspace</p>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </div>
+
+      {/* Neighbourhood Section */}
+      <div className="neighbourhood-sec">
+        <div className="neighbourhood-outer">
+          <div className="container">
+            <TopHeadCnt
+              items={[
+                {
+                  heading: "Neighbourhood",
+                  subHeading:
+                    "Skyvue Stellar at Sobha Hartland 2 Dubai Location",
+                  content: `Sobha Skyvue Stellar is positioned in Sobha Hartland 2 — a community just 15 minutes from Downtown,
+                  Business Bay, Dubai International Airport, and Palm Jumeirah. Its proximity to Mohammed Bin Rashid City (MBR City)
+                  adds extra value, making it a central and well-connected location with high capital appreciation potential.`,
+                },
+              ]}
+            />
+            <div className="loc-img" data-aos="fade-up">
+              <img
+                src="assets/product/dubai-location.png"
+                alt="Dubai Location"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Gallery Section */}
+      <div className="gallery-sec">
+        <div className="gallery-outer">
+          <div className="container">
+            <TopHeadCnt
+              items={[
+                {
+                  heading: "Gallery",
+                  subHeading: "Sobha Skyvue Stellar gallery",
+                  content: `The right spot to grab all the pictures of the project giving an appropriate idea and vibes
+                   of this beautiful development, so look at each of them below`,
+                },
+              ]}
+            />
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar]}
+              slidesPerView={1}
+              spaceBetween={30}
+              scrollbar={{
+                el: ".swiper-scrollbar",
+                draggable: true,
+              }}
+              navigation={{
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              }}
+              pagination={{
+                type: "fraction",
+                el: ".swiper-pagination",
+                formatFractionCurrent: (num) => `0${num}`,
+                formatFractionTotal: (num) => `0${num}`,
+                renderFraction: (currentClass, totalClass) => `
+            <span class="${currentClass}"></span>
+            /
+            <span class="${totalClass}"></span>
+          `,
+              }}
+              className="gallerySwipper"
+            >
+              <SwiperSlide>
+                <img src="/assets/product/glswip1.png" alt="Living Room" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/assets/product/dubai-location.png" alt="Dubai" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/assets/product/glswip1.png" alt="Living Room 2" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/assets/swip1.png" alt="Sky View" />
+              </SwiperSlide>
+            </Swiper>
+
+            {/* Bottom Controls */}
+            <div className="gallery-controls">
+              <div className="swiper-pagination"></div>
+              <div className="swiper-scrollbar"></div>
+              <div className="swiper-nav">
+                <div className="swiper-button-prev">
+                  <img src="/assets/product/icon-left.svg" alt="Prev" />
+                </div>
+                <div className="swiper-button-next">
+                  <img src="/assets/product/icon-right.svg" alt="Next" />
+                </div>
               </div>
             </div>
           </div>
