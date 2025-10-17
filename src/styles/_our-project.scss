@@ -19,10 +19,30 @@
         flex: 0 0 auto;
 
         .project-img {
+          position: relative;
           img {
             width: 100%;
             height: auto;
             display: block;
+          }
+                    .project-label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #fff;
+            color: $text-color-2; // or a dark gray
+            font-weight: 500;
+            padding: 10px 11px;
+            font-size: 1.8rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            z-index: 2;
+            white-space: nowrap;
+        
+            @media (max-width: 768px) {
+              font-size: 1rem;
+              padding: 4px 10px;
+            }
           }
         }
 
@@ -91,10 +111,30 @@
         }
 
         .project-img {
+          position: relative;
           img {
             width: 100%;
             height: auto;
             display: block;
+          }
+          .project-label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #fff;
+            color: $text-color-2; // or a dark gray
+            padding: 10px 11px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            z-index: 2;
+            white-space: nowrap;
+        
+            @media (max-width: 768px) {
+              font-size: 1rem;
+              padding: 4px 10px;
+            }
           }
         }
 

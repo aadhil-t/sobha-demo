@@ -10,7 +10,7 @@
                 align-items: center;
                 padding-top: 62px;
                 padding-bottom: 120px;
-                border-bottom: 1px solid black;
+                border-bottom: $border;
                 gap: 20px;
                 @media (max-width: 1024px) {
                     padding-top: 30px;
@@ -31,6 +31,7 @@
                         justify-content: space-between;
                         gap: 212px;
                         padding: 50px 0;
+                        border-bottom: $border;
                         color: $secondary-color;
                         @media (max-width: 1190px) {
                             gap: 65px;
@@ -48,6 +49,9 @@
                             @media (max-width: 1024px) {
                                 font-size: 2rem;
                             }
+                        }
+                        &:last-child {
+                            border-bottom: none;
                         }
                     }
                 }

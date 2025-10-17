@@ -1,64 +1,3 @@
-// @import '../styles/variables';
-// @import '../styles/mixins';
-// @import '../styles/fonts';
-
-
-// .home-banner {
-//   width: 100%;
-//   height: 932px;
-//   position: relative;
-//   @media (max-width: 500px) {
-//     height: 100vh;
-//   }
-//   .banner-image {
-//     position: relative;
-//     width: 100%;
-//     height: 100%;
-//     max-height: 932px;
-//     background-image: url("/assets/banner.png");
-//     background-size: cover;
-//     background-position: bottom;
-//     @media (min-width: 1800px) {
-//       background-position: 0 -250px;
-//     }
-//     @media (max-width: 500px) {
-//       height: 100vh;
-//     }
-//     .banner-text {
-//       padding-top: 186px;
-//       color: white;
-//       @media (min-width: 1800px) {
-//         padding-top: 120px;
-//       }
-//       h1 {
-//         max-width: 100rem;
-//         font-style: Light;
-//         text-transform: uppercase;
-//       }
-//       span{
-//         @include desktoptitle;
-//         color: $secondary-color;
-//         font-weight: 600;
-//         @media (max-width: 1050px) {
-//           @include smalldesktoptitle;
-//           font-weight: 600;
-//         }
-//         @media (max-width: 800px) {
-//           @include tabtitle;
-//           font-weight: 600;
-//         }
-//         @media (max-width: 500px) {
-//           @include mobiletitle;
-//           font-weight: 600;
-//         }
-//       }
-//       p {
-//         font-size: 1.5rem;
-//       }
-//     }
-//   }
-// }
-
 
 @import '../styles/variables';
 @import '../styles/mixins';
@@ -84,6 +23,49 @@
   height: 932px;
   position: relative;
   overflow: hidden;
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2); // Light white line
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  // Horizontal line (top)
+  &::before {
+    top: 100px;
+    width: 100%;
+    height: 1px;
+  }
+
+  // Vertical lines (left and right)
+  &::after {
+     top: 0;
+    bottom: 5%;
+    left: 100px;
+    width: 1px;
+    @media (max-width: 1435px) {
+      display: none;
+    }
+  }
+
+  // Optional right line
+  .banner-line-right {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 5%;
+    right: 100px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    pointer-events: none;
+     @media (max-width: 1435px) {
+      display: none;
+    }
+  }
 
   @media (max-width: 500px) {
     height: 100vh;
@@ -110,6 +92,7 @@
     /* Pagination styling */
     .swiper-pagination-bullets {
       bottom: 30px;
+      right: 95px;
 
       .swiper-pagination-bullet {
         background: rgba(255, 255, 255, 0.7);
@@ -185,4 +168,63 @@
       }
     }
   }
+
+  .explore-circle {
+  position: absolute;
+  top: 23%;
+  right: 11%;
+  width: 141px;
+  height: 141px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  font-size: 2rem;
+  font-weight: 300;
+  z-index: 3;;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+  transition: all 0.3s ease;
+  @media (min-width: 1800px) {
+    top: 17%;
+    right: 20%;
+  }
+  span {
+    text-align: center;
+    font-weight: 400;
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    border-color: $secondary-color;
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: scale(1.05);
+
+    span {
+      color: $secondary-color;
+      transform: scale(1.05);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    // display: none;
+    top: 30%;
+    right: 10%;
+  }
+  @media (max-width: 768px) {
+    // display: none;
+    top: 35%;
+   right: 10%;
+  }
+  @media (max-width: 432px) {
+    // display: none;
+    top: 50%;
+   right: 30%;
+  }
 }
+
+}
+

@@ -115,26 +115,21 @@ export default function Home() {
   return (
     <main>
       {/* Banner Section */}
-      {/* <div className="home-banner">
-        <div className="banner-image">
-          <div className="container banner-text">
-            <h1 data-aos="fade-up">
-              Explore An Exclusive Lifestyle in the Heart of <span>Dubai</span>
-            </h1>
-          </div>
-        </div>
-      </div> */}
     <div className="home-banner">
+        <div className="explore-circle">
+          <span>• Explore</span>
+        </div>
+        <span className="banner-line-right" />
       <Swiper
       ref={swiperRef}
         className="banner-swiper"
         modules={[Pagination, Autoplay]}
           direction="vertical"            
         pagination={{ clickable: true }}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 4000,
+        //   disableOnInteraction: false,
+        // }}
         loop={true}
         onSlideChange={handleSlideChange}
       >
@@ -229,6 +224,7 @@ export default function Home() {
             <div className="project-top-sec">
               <div className="project-top-blk" data-aos="fade-up">
                 <div className="project-img">
+                  <span className="project-label">1 & 2 BHK</span>
                   <img src="/assets/project1.png" alt="Canalside Marina Residences" />
                 </div>
                 <div className="project-text">
@@ -240,6 +236,7 @@ export default function Home() {
 
               <div className="project-top-blk" data-aos="fade-up">
                 <div className="project-img">
+                  <span className="project-label">1,2&3 Bed Apartments</span>
                   <img src="/assets/project2.png" alt="Canalside Marina Residences" />
                 </div>
                 <div className="project-text">
@@ -253,6 +250,7 @@ export default function Home() {
             <div className="project-btm-sec" data-aos="fade-up">
               <div className="project-btm-blk">
                 <div className="project-img">
+                  <span className="project-label">1-3 Bed Apartments</span>
                   <img src="/assets/btm-pro1.png" alt="Pierside Marina Residences" />
                 </div>
                   <div className="project-text">
@@ -263,6 +261,7 @@ export default function Home() {
               </div>
               <div className="project-btm-blk">
                 <div className="project-img">
+                  <span className="project-label">1-3 Bed Apartments</span>
                   <img src="/assets/btm-pro2.png" alt="Pierside Marina Residences" />
                 </div>
                   <div className="project-text">
@@ -273,6 +272,7 @@ export default function Home() {
               </div>
               <div className="project-btm-blk">
                 <div className="project-img">
+                  <span className="project-label">1-3 Bed Apartments</span>
                   <img src="/assets/btm-pro3.png" alt="Pierside Marina Residences" />
                 </div>
                   <div className="project-text">
@@ -283,6 +283,7 @@ export default function Home() {
               </div>
               <div className="project-btm-blk">
                 <div className="project-img">
+                  <span className="project-label">1-3 Bed Apartments</span>
                   <img src="/assets/btm-pro4.png" alt="Pierside Marina Residences" />
                 </div>
                   <div className="project-text">
@@ -293,6 +294,7 @@ export default function Home() {
               </div>
               <div className="project-btm-blk">
                 <div className="project-img">
+                  <span className="project-label">1-3 Bed Apartments</span>
                   <img src="/assets/btm-pro5.png" alt="Pierside Marina Residences" />
                 </div>
                   <div className="project-text">
@@ -303,6 +305,7 @@ export default function Home() {
               </div>
               <div className="project-btm-blk">
                 <div className="project-img">
+                  <span className="project-label">1-3 Bed Apartments</span>
                   <img src="/assets/btm-pro6.png" alt="Pierside Marina Residences" />
                 </div>
                   <div className="project-text">

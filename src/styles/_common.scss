@@ -46,6 +46,19 @@
       h5{
           margin: 0;
           color: $text-color-50;
+          position: relative;
+          padding-left: 20px; // 8px dot + 12px gap
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: $secondary-color; // Use your desired blue color
+            border-radius: 50%;
+          }
       }             
       h2{
           margin: 0;
