@@ -180,7 +180,7 @@ export default function Product() {
               ]}
             />
           </div>
-          <div className="">
+          <div className="container">
             <Swiper
               modules={[Navigation, Pagination, Scrollbar]}
               slidesPerView={2.5}

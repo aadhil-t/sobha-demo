@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef  } from 'react';
 import Image from "next/image";
 import "./home.scss";
 import "../styles/_about.scss";
@@ -9,7 +9,7 @@ import "../styles/_why-dubai.scss";
 import "../styles/_dream-home.scss";
 import "../styles/_faq.scss";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination } from 'swiper/modules';
+import { FreeMode, Pagination , Autoplay} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
@@ -29,18 +29,48 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default function Home() {
+
+  const swiperRef = useRef(null);
+
+  // On slide change, animate only active slide h1
+  const handleSlideChange = () => {
+    const swiper = swiperRef.current.swiper;
+    const slides = swiper.slides;
+
+    slides.forEach((slide) => {
+      const heading = slide.querySelector(".banner-text h1");
+      if (heading) heading.classList.remove("animate");
+    });
+
+    const activeSlide = slides[swiper.activeIndex];
+    const activeHeading = activeSlide.querySelector(".banner-text h1");
+    if (activeHeading) {
+      void activeHeading.offsetWidth; // trigger reflow
+      activeHeading.classList.add("animate");
+    }
+  };
+
+  // Trigger animation on first load
+  useEffect(() => {
+    setTimeout(() => {
+      const firstHeading = document.querySelector(".swiper-slide-active .banner-text h1");
+      if (firstHeading) firstHeading.classList.add("animate");
+    }, 100); // small delay so Swiper is initialized
+  }, []);
+
+
+  useEffect(() => {
+    // Initialize AOS once
+    AOS.init({
+      duration: 1200,
+      once: false,
+      mirror: false,
+    });
+  }, []);
+
   // Accordian //
     useEffect(() => {
     initAccordion();
-  }, []);
-
-  // Aos //
-    useEffect(() => {
-    AOS.init({
-      duration: 1200, // animation duration in ms
-      once: false,     // whether animation should happen only once
-      mirror: false,  // whether elements should animate out while scrolling past them
-    });
   }, []);
 
   // Mouse Scroll //
@@ -80,12 +110,12 @@ export default function Home() {
       scrollTween.kill();
     };
   }, []);
-  
 
+  
   return (
     <main>
       {/* Banner Section */}
-      <div className="home-banner">
+      {/* <div className="home-banner">
         <div className="banner-image">
           <div className="container banner-text">
             <h1 data-aos="fade-up">
@@ -93,7 +123,46 @@ export default function Home() {
             </h1>
           </div>
         </div>
-      </div>
+      </div> */}
+    <div className="home-banner">
+      <Swiper
+      ref={swiperRef}
+        className="banner-swiper"
+        modules={[Pagination, Autoplay]}
+          direction="vertical"            
+        pagination={{ clickable: true }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        onSlideChange={handleSlideChange}
+      >
+        {/* Slide 1 */}
+        <SwiperSlide>
+          <div className="banner-image" style={{ backgroundImage: 'url("/assets/banner.png")' }}>
+            <div className="container banner-text">
+              <h1 >
+                Explore An Exclusive Lifestyle in the Heart of <span>Dubai</span>
+              </h1>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        {/* Slide 2 */}
+        <SwiperSlide>
+          <div className="banner-image" style={{ backgroundImage: 'url("/assets/banner.png")' }}>
+            <div className="container banner-text">
+              <h1  >
+                Discover The Luxury Living You <span>Deserve</span>
+              </h1>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        {/* Add more slides as needed */}
+      </Swiper>
+    </div>
 
       {/* About Section */}
       <div className="about-section">

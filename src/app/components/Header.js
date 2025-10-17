@@ -36,7 +36,7 @@ export default function Header() {
             >
               Projects
             </Link>
-            <Button href="/enquire" label="Enquire Now" />
+            <Button className="enquire-btn" href="/enquire" label="Enquire Now" />
           </nav>
 
           {/* Right: Hamburger (mobile only) */}
