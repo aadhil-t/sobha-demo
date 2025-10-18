@@ -17,8 +17,10 @@ export default function FaqSection() {
       <div className="faq-outer">
         <div className="container">
           <div className="faq-header" data-aos="fade-up">
-            <span className="dot">.</span>
+            <div className='faq-dot-blk'>
+            <span className="dot"></span>
             <p className="label">FAQ</p>
+            </div>
             <h2>Frequently Asked Questions!</h2>
           </div>
 

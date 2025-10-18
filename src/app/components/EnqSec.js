@@ -13,7 +13,7 @@ export default function EnqSetion() {
           <h1>Enquire Today!</h1>
           <p>Our team will reach out with all the information you need</p>
           <a href="" className="contact-btn">
-            Contact Now
+            Contact <br/> Now
           </a>
         </div>
       </div>
