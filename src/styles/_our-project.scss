@@ -14,7 +14,10 @@
       padding-top: 6.1rem;
       padding-bottom: 8rem;
       gap: 20px;
-
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;  
+      }
       .project-top-blk {
         flex: 0 0 auto;
 
@@ -25,7 +28,7 @@
             height: auto;
             display: block;
           }
-                    .project-label {
+          .project-label {
             position: absolute;
             top: 20px;
             left: 20px;
@@ -81,11 +84,17 @@
       // first block
       .project-top-blk:first-child {
         width: calc((738 / 1281) * 100%);
+        @media (max-width: 768px) {
+          width: 100%;
+        }
       }
 
       // second block
       .project-top-blk:nth-child(2) {
         width: calc((523 / 1281) * 100%);
+         @media (max-width: 768px) {
+          width: 100%;
+        }
       }
     }
 

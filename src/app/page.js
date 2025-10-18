@@ -337,11 +337,15 @@ export default function Home() {
 
             <div className="features-grid" data-aos="fade-up">
               <div className="feature-item">
-                <img src="assets/icons/resort.svg" alt="Resort" />
+                  <div className="icon-wrapper">
+                  <img src="/assets/icons/resort.svg" alt="Resort" />
+                </div>
                 <p>Resort themed facilities & amenities</p>
               </div>
               <div className="feature-item">
-                <img src="assets/icons/security.svg" alt="Security" />
+                <div className="icon-wrapper icon-2">
+                  <img src="assets/icons/security.svg" alt="Security" />
+                </div>
                 <p>Round the clock security</p>
               </div>
               <div className="feature-item">
