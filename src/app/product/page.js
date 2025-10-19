@@ -165,6 +165,7 @@ export default function Product() {
         </div>
       </div>
 
+
       {/* Amenities Section */}
       <div className="amenities-sec">
         <div className="amenities-outer">
