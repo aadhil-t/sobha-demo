@@ -321,7 +321,7 @@ export default function Home() {
       </div>
 
       {/* Our Specialities Section */}
-      <div className="our-specialities-section">
+      <div className="our-specialities-section">  
         <div className="specialities-outer">
           <div className="container">
             <TopHeadCnt 

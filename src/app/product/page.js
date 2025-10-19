@@ -167,7 +167,7 @@ export default function Product() {
 
 
       {/* Amenities Section */}
-      <div className="amenities-sec">
+      {/* <div className="amenities-sec">
         <div className="amenities-outer">
           <div className="container">
                <TopHeadCnt
@@ -194,7 +194,17 @@ export default function Product() {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
               }}
-        
+              breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                  },
+                  650: {
+                    slidesPerView: 2,
+                  },
+                  800: {
+                    slidesPerView: 2.02,
+                  },
+                }}
               className="amenitiesSwipper"
             >
               <SwiperSlide>
@@ -224,7 +234,102 @@ export default function Product() {
             </Swiper>
           </div>
         </div>
+      </div> */}
+
+  <div className="amenities-sec">
+      <div className="amenities-outer">
+        <div className="container">
+          <TopHeadCnt
+            items={[
+              {
+                heading: "Amenities",
+                subHeading: "A Lifestyle Beyond Expectations",
+              },
+            ]}
+          />
+        </div>
+
+        <div className="container amenities-container">
+          {/* Navigation buttons at top-right */}
+          <div className="swiper-top-nav">
+            <div className="swiper-button-prev custom-nav-btn">
+            </div>
+            <div className="swiper-button-next custom-nav-btn">
+            </div>
+          </div>
+
+          {/* Swiper slider */}
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar]}
+            slidesPerView={2.5}
+            spaceBetween={20}
+            scrollbar={{
+              el: ".swiper-scrollbar",
+              draggable: true,
+            }}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              650: {
+                slidesPerView: 2,
+              },
+              800: {
+                slidesPerView: 2.02,
+              },
+            }}
+            className="amenitiesSwipper"
+          >
+            <SwiperSlide>
+            <div className="image-wrapper">
+              <img src="/assets/product/amenities1.png" alt="Living Room" />
+              <span className="image-label">Multipurpose Hall</span>
+            </div>
+              <p>You can host a variety of events & activities</p>
+            </SwiperSlide>
+            <SwiperSlide>
+            <div className="image-wrapper">
+              <img src="/assets/product/amenities2.png" alt="Dubai" />
+              <span className="image-label">Outdoor Gym Terrace</span>
+            </div>
+              <p>Enjoy a workout in the outerspace</p>
+            </SwiperSlide>
+            <SwiperSlide>
+            <div className="image-wrapper">
+              <img src="/assets/product/amenities3.png" alt="Living Room 2" />
+              <span className="image-label">Pilates Studio</span>
+            </div>
+              <p>You can host a variety of events & activities</p>
+            </SwiperSlide>
+            <SwiperSlide>
+            <div className="image-wrapper">
+              <img src="/assets/product/amenities1.png" alt="Sky View" />
+              <span className="image-label">Pilates Studio</span>
+            </div>
+              <p>Enjoy a workout in the outerspace</p>
+            </SwiperSlide>
+               <SwiperSlide>
+            <div className="image-wrapper">
+              <img src="/assets/product/amenities2.png" alt="Dubai" />
+              <span className="image-label">Outdoor Gym Terrace</span>
+            </div>
+              <p>Enjoy a workout in the outerspace</p>
+            </SwiperSlide>
+            <SwiperSlide>
+            <div className="image-wrapper">
+              <img src="/assets/product/amenities3.png" alt="Living Room 2" />
+              <span className="image-label">Pilates Studio</span>
+            </div>
+              <p>You can host a variety of events & activities</p>
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </div>
+    </div>
 
       {/* Neighbourhood Section */}
       <div className="neighbourhood-sec">
