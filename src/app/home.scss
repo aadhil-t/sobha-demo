@@ -93,6 +93,10 @@
     .swiper-pagination-bullets {
       bottom: 30px;
       right: 95px;
+      @media (max-width: 1140px) {
+        bottom: 305px;
+        right: 20px;  
+      }
 
       .swiper-pagination-bullet {
         background: rgba(255, 255, 255, 0.7);
@@ -131,6 +135,9 @@
     .banner-text {
       padding-top: 186px;
       color: white;
+      @media (max-width:500px) {
+        padding-top: 145px;
+      }
 
       @media (min-width: 1800px) {
         padding-top: 120px;
@@ -140,6 +147,10 @@
         max-width: 100rem;
         font-style: Light;
         text-transform: uppercase;
+        @media (max-width:500px) {
+          font-size: 4.5rem;
+          max-width: 100rem;
+        }
       }
 
       span {

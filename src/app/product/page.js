@@ -167,75 +167,6 @@ export default function Product() {
 
 
       {/* Amenities Section */}
-      {/* <div className="amenities-sec">
-        <div className="amenities-outer">
-          <div className="container">
-               <TopHeadCnt
-              items={[
-                {
-                  heading: "Amenities",
-                  subHeading: "A Lifestyle Beyond Expectations",
-                  content: `The right spot to grab all the pictures of the project giving an appropriate idea and vibes
-                   of this beautiful development, so look at each of them below`,
-                },
-              ]}
-            />
-          </div>
-          <div className="container">
-            <Swiper
-              modules={[Navigation, Pagination, Scrollbar]}
-              slidesPerView={2.5}
-              spaceBetween={20}
-              scrollbar={{
-                el: ".swiper-scrollbar",
-                draggable: true,
-              }}
-              navigation={{
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              }}
-              breakpoints={{
-                  0: {
-                    slidesPerView: 1,
-                  },
-                  650: {
-                    slidesPerView: 2,
-                  },
-                  800: {
-                    slidesPerView: 2.02,
-                  },
-                }}
-              className="amenitiesSwipper"
-            >
-              <SwiperSlide>
-                <img src="/assets/product/amenities1.png" alt="Living Room" />
-                <p>You can host a variety of events & activities</p>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/product/amenities2.png" alt="Dubai" />
-                <p>Enjoy a workout in the outerspace</p>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/product/amenities3.png" alt="Living Room 2" />
-                <p>You can host a variety of events & activities</p>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/product/amenities1.png" alt="Sky View" />
-                <p>Enjoy a workout in the outerspace</p>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/product/amenities2.png" alt="Dubai" />
-                <p>Enjoy a workout in the outerspace</p>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/product/amenities3.png" alt="Living Room 2" />
-                <p>Enjoy a workout in the outerspace</p>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-      </div> */}
-
   <div className="amenities-sec">
       <div className="amenities-outer">
         <div className="container">
@@ -383,6 +314,7 @@ export default function Product() {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
               }}
+              
               pagination={{
                 type: "fraction",
                 el: ".swiper-pagination",

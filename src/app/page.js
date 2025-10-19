@@ -126,10 +126,10 @@ export default function Home() {
         modules={[Pagination, Autoplay]}
           direction="vertical"            
         pagination={{ clickable: true }}
-        // autoplay={{
-        //   delay: 4000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
         loop={true}
         onSlideChange={handleSlideChange}
       >
