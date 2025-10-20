@@ -24,7 +24,7 @@
     padding-top: 10rem;
     display: flex;
     // justify-content: space-between;
-    gap: 120px;
+    gap: 130px;
     @media (max-width: 1024px) {
         gap: 60px;
     }
@@ -73,10 +73,11 @@
     align-items: flex-end;
   }
   P{
-      max-width: 53rem;
+      max-width: 60rem;
       margin: 0;
       text-align: left;
       color: $text-color-80;
+      font-size: 1.8rem;
   }
 }
 
