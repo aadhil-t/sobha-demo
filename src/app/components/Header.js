@@ -124,6 +124,13 @@ export default function Header() {
     >
       Projects
     </Link>
+    <Link
+      href="/blogs"
+      className="nav-link"
+      onClick={() => setIsMenuOpen(false)}
+    >
+      Blogs
+    </Link>
 
     {/* Enquire button inside menu (visible only on mobile) */}
     <div className="mobile-enquire">
