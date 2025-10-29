@@ -1,3 +1,257 @@
+// @import "../styles/variables";
+
+// .footer {
+//   background: $bg-color-1;
+
+//   .foot-outer {
+//     .logo-wrappper {
+//       .logo-blk {
+//         display: flex;
+//         justify-content: space-between;
+//         padding-top: 6rem;
+//         padding-bottom: 4.5rem;
+
+//         h4 {
+//           font-size: 2rem;
+//           max-width: 32rem;
+//           color: $secondary-color;
+//         }
+//       }
+//     }
+
+//     .topSection {
+//       display: flex;
+//       justify-content: space-between;
+//       padding-top: 7rem;
+//       border-top: $border;
+
+//       .contact, .projects, .social {
+//         p {
+//           font-family: "Raleway";
+//           font-weight: 600;
+//           font-style: SemiBold;
+//           font-size: 20px;
+//           line-height: 30px;
+//           letter-spacing: 0%;
+//           padding-bottom: 2rem;
+//           margin: 0;
+//           color: $text-color;
+//         }
+//       }
+
+//       .contact {
+//         .contact-item {
+//           padding-bottom: 2rem;
+//           display: flex;
+//           gap: 1rem;
+//           a{
+//             font-weight: 400;
+//             font-style: Regular;
+//             font-size: 17px;
+//             line-height: 20px;
+//             letter-spacing: 0%;
+//             color: $text-color-80;
+//             text-decoration: none;
+//             border-radius: 4px; // Optional: for smoother background effect
+//             transition: background 0.3s ease, color 0.3s ease;
+//             &:hover {
+//               color: $secondary-color; // Optional: make text fully opaque
+//             }
+//           }
+//         }
+//       }
+
+//       .projects {
+//         .project-blk {
+//           display: flex;
+//           gap: 56px;
+
+//           .pro-ul {
+//             list-style: none;
+//             margin: 0;
+//             padding: 0;
+
+//             li {
+//               padding-left: 0;
+//               a{
+//                 padding-bottom: 2rem;
+//                 color: $text-color-80;
+//                 font-weight: 400;
+//                 font-style: Regular;
+//                 font-size: 17px;
+//                 line-height: 40px;
+//                 letter-spacing: 0%;
+//                 text-decoration: none;
+//                 border-radius: 4px; // Optional: for smoother background effect
+//                 transition: background 0.3s ease, color 0.3s ease;
+//                 &:hover {
+//                   color: $secondary-color; // Optional: make text fully opaque
+//                 }
+//               }
+//               &::before {
+//                 display: none !important; 
+//                 content: none;
+//               }
+//             }
+//           }
+//         }
+//       }
+
+//       .social {
+//         .socialIcons {
+//           display: flex;
+//           align-items: center;
+//           gap: 2.623rem;
+//         }
+//       }
+//     }
+
+//     .disclaimer {
+//       padding-top: 8rem;
+//       padding-bottom: 4rem;
+//       border-bottom: $border;
+//       font-weight: 400;
+//       font-style: Regular;
+//       font-size: 13px;
+//       line-height: 20px;
+//       letter-spacing: 0%;
+//       color: $text-color;
+//       strong{
+//         font-family: Archivo;
+//         font-weight: 600;
+//         font-style: SemiBold;
+//         font-size: 15px;
+//         line-height: 20px;
+//         letter-spacing: 0%;
+//         color: $text-color;
+//       }
+//     }
+
+//     .bottomBar {
+//       display: flex;
+//       justify-content: space-between;
+//       padding-top: 4rem;
+//       padding-bottom: 4rem;
+//       color: $text-color ;
+//       span{
+//         font-family: "Raleway";
+//         font-weight: 400;
+//         font-style: Regular;
+//         font-size: 16px;
+//         line-height: 30px;
+//         letter-spacing: 0%;
+//         color: $text-color;
+//       }
+//       a{
+//         color: $text-color;
+//         text-decoration: none;
+//         border-radius: 4px; // Optional: for smoother background effect
+//         transition: background 0.3s ease, color 0.3s ease;
+//         &:hover {
+//           color: $secondary-color; // Optional: make text fully opaque
+//         }
+//       }
+//       .bottomBar-privacy{
+//         a{
+//           font-family: "Raleway";
+//           font-weight: 400;
+//           font-style: Regular;
+//           font-size: 1.6rem;
+//           line-height: 3rem;
+//           letter-spacing: 0%;
+//           border-radius: 4px; // Optional: for smoother background effect
+//           transition: background 0.3s ease, color 0.3s ease;
+//           &:hover {
+//             color: $secondary-color; // Optional: make text fully opaque
+//           }
+//         }
+        
+//       }
+//     }
+//   }
+
+//   // 📱 Mobile (<768px)
+//   @media (max-width: 768px) {
+//     .foot-outer {
+//       .logo-wrappper {
+//         .logo-blk {
+//           flex-direction: column;
+//           align-items: flex-start;
+//           padding-top: 4rem;
+//           padding-bottom: 3rem;
+//           gap: 3rem;
+//           h4 {
+//             font-size: 2rem;
+//             max-width: 100%;
+//           }
+//         }
+//       }
+
+//       .topSection {
+//         flex-direction: column;
+//         gap: 4rem;
+//         padding-top: 5rem;
+
+//         .projects {
+//           .project-blk {
+//             flex-direction: column;
+//             gap: 2rem;
+//           }
+//         }
+
+//         .social {
+//           .socialIcons {
+//             flex-wrap: wrap;
+//             gap: 1.5rem;
+//           }
+//         }
+//       }
+
+//       .bottomBar {
+//         flex-direction: column;
+//         gap: 2rem;
+//         align-items: flex-start;
+//         }
+
+//       .disclaimer {
+//         padding-top: 6rem;
+//         padding-bottom: 3rem;
+//       }
+//     }
+//   }
+
+//   // 💻 Tablet (768px - 1024px)
+//   @media (max-width: 1024px) {
+//     .foot-outer {
+//       .topSection {
+//         flex-direction: column;
+//         gap: 5rem;
+//         padding-top: 6rem;
+
+//         .projects {
+//           .project-blk {
+//             flex-direction: row;
+//             gap: 3rem;
+//             flex-wrap: wrap;
+//           }
+//         }
+
+//         .social {
+//           .socialIcons {
+//             gap: 2rem;
+//           }
+//         }
+//       }
+
+//       .bottomBar {
+//         flex-direction: column;
+//         gap: 2rem;
+//       }
+//     }
+//   }
+// }
+  
+
 @import "../styles/variables";
 
 .footer {
@@ -25,7 +279,9 @@
       padding-top: 7rem;
       border-top: $border;
 
-      .contact, .projects, .social {
+      .contact,
+      .projects,
+      .social {
         p {
           font-family: "Raleway";
           font-weight: 600;
@@ -44,7 +300,8 @@
           padding-bottom: 2rem;
           display: flex;
           gap: 1rem;
-          a{
+
+          a {
             font-weight: 400;
             font-style: Regular;
             font-size: 17px;
@@ -52,10 +309,11 @@
             letter-spacing: 0%;
             color: $text-color-80;
             text-decoration: none;
-            border-radius: 4px; // Optional: for smoother background effect
+            border-radius: 4px;
             transition: background 0.3s ease, color 0.3s ease;
+
             &:hover {
-              color: $secondary-color; // Optional: make text fully opaque
+              color: $secondary-color;
             }
           }
         }
@@ -72,7 +330,9 @@
             padding: 0;
 
             li {
-              a{
+              padding-left: 0;
+
+              a {
                 padding-bottom: 2rem;
                 color: $text-color-80;
                 font-weight: 400;
@@ -81,22 +341,52 @@
                 line-height: 40px;
                 letter-spacing: 0%;
                 text-decoration: none;
-                border-radius: 4px; // Optional: for smoother background effect
+                border-radius: 4px;
                 transition: background 0.3s ease, color 0.3s ease;
+
                 &:hover {
-                  color: $secondary-color; // Optional: make text fully opaque
+                  color: $secondary-color;
                 }
+              }
+
+              &::before {
+                display: none !important;
+                content: none;
               }
             }
           }
         }
       }
 
+      /* 💙 SOCIAL ICON FILTER HOVER — tuned for #0660B4 */
       .social {
         .socialIcons {
           display: flex;
           align-items: center;
           gap: 2.623rem;
+
+          a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, filter 0.3s ease;
+
+            svg,
+            img {
+              width: 28px;
+              height: 28px;
+              transition: filter 0.3s ease;
+            }
+
+            &:hover {
+              transform: translateY(-2px);
+              /* Closest visual match to #0660B4 */
+              svg,
+              img {
+                  // filter: invert(35%) sepia(98%) saturate(2500%) hue-rotate(191deg) brightness(90%) contrast(100%);
+              }
+            }
+          }
         }
       }
     }
@@ -111,7 +401,8 @@
       line-height: 20px;
       letter-spacing: 0%;
       color: $text-color;
-      strong{
+
+      strong {
         font-family: Archivo;
         font-weight: 600;
         font-style: SemiBold;
@@ -127,8 +418,9 @@
       justify-content: space-between;
       padding-top: 4rem;
       padding-bottom: 4rem;
-      color: $text-color ;
-      span{
+      color: $text-color;
+
+      span {
         font-family: "Raleway";
         font-weight: 400;
         font-style: Regular;
@@ -137,35 +429,38 @@
         letter-spacing: 0%;
         color: $text-color;
       }
-      a{
+
+      a {
         color: $text-color;
         text-decoration: none;
-        border-radius: 4px; // Optional: for smoother background effect
+        border-radius: 4px;
         transition: background 0.3s ease, color 0.3s ease;
+
         &:hover {
-          color: $secondary-color; // Optional: make text fully opaque
+          color: $secondary-color;
         }
       }
-      .bottomBar-privacy{
-        a{
+
+      .bottomBar-privacy {
+        a {
           font-family: "Raleway";
           font-weight: 400;
           font-style: Regular;
           font-size: 1.6rem;
           line-height: 3rem;
           letter-spacing: 0%;
-          border-radius: 4px; // Optional: for smoother background effect
+          border-radius: 4px;
           transition: background 0.3s ease, color 0.3s ease;
+
           &:hover {
-            color: $secondary-color; // Optional: make text fully opaque
+            color: $secondary-color;
           }
         }
-        
       }
     }
   }
 
-  // 📱 Mobile (<768px)
+  /* 📱 Mobile (<768px) */
   @media (max-width: 768px) {
     .foot-outer {
       .logo-wrappper {
@@ -175,6 +470,7 @@
           padding-top: 4rem;
           padding-bottom: 3rem;
           gap: 3rem;
+
           h4 {
             font-size: 2rem;
             max-width: 100%;
@@ -206,7 +502,7 @@
         flex-direction: column;
         gap: 2rem;
         align-items: flex-start;
-        }
+      }
 
       .disclaimer {
         padding-top: 6rem;
@@ -215,7 +511,7 @@
     }
   }
 
-  // 💻 Tablet (768px - 1024px)
+  /* 💻 Tablet (768px - 1024px) */
   @media (max-width: 1024px) {
     .foot-outer {
       .topSection {
@@ -245,4 +541,3 @@
     }
   }
 }
-  
