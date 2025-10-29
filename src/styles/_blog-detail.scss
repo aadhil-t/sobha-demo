@@ -1,0 +1,105 @@
+@import "../styles/variables";
+
+.blog-detail-sec{
+    .outer{
+        .blog-top-inner{
+            gap: 43.1rem;
+            padding-bottom: 6rem;
+            @media (max-width: 1155px) {
+                gap: 25rem;
+                padding-bottom: 4rem;
+                padding-top: 4rem;
+            }
+            @media (max-width: 900px) {
+                gap: 2rem;
+            }
+            .blog-backbtn-blk{
+                .go-back{
+                    font-weight: 400;
+                    font-style: Regular;
+                    font-size: 20px;
+                    line-height: 20px;
+                    letter-spacing: 0%;
+                }
+            }
+        }
+        .blog-top-content{
+            h5{
+                padding-top: 2.5rem;
+                font-family: "Raleway";
+                font-weight: 500;
+                font-style: Medium;
+                font-size: 20px;
+                line-height: 20px;
+                letter-spacing: 0%;
+                margin: 0;
+                color: $secondary-color;
+            }
+            h2{
+                @media (max-width: 850px) {
+                    font-size: 35px;
+                    line-height: 40px;
+                }
+                @media (max-width: 500px) {
+                    font-size: 30px;
+                    line-height: 30px;
+                }
+            }
+        }
+        .blog-detail-btm{
+            padding-top: 10rem;
+            @media (max-width: 1024px) {
+                padding-top: 4rem;
+            }
+            .blog-head{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 4.6rem;
+                h2{
+                    font-weight: 300;
+                    font-style: Light;
+                    font-size: 50px;
+                    line-height: 50px;
+                    letter-spacing: 0%;
+                    color: $text-color;
+                    margin: 0;
+                      @media (max-width: 850px) {
+                    font-size: 35px;
+                    line-height: 40px;
+                }
+                @media (max-width: 500px) {
+                    font-size: 30px;
+                    line-height: 30px;
+                }
+                }
+            }
+            .project-btm-blk{
+                background: white;
+            }
+        }
+        .blog-top-sec{
+            padding-bottom: 10rem;
+            border-bottom: $border;
+            @media (max-width: 1024px) {
+                padding-bottom: 4rem;
+            }
+            .detail-blog-blk{
+                .blog-detail-img{
+                    width: 100%;
+                    max-width: 1280px;
+                    max-height: 523px;
+                    margin-bottom: 6rem;
+                    img{
+                        width: 100%;
+                        max-width: 1280px;
+                        max-height: 523px;
+                        display: block;
+                        object-fit: cover;
+                        
+                    }
+                }
+            }
+        }
+    }
+}

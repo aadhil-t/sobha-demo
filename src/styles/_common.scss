@@ -117,7 +117,7 @@
   // Bottom grid section
     .project-btm-sec {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(314px, 1fr));
       gap: 20px;
       row-gap: 80px; 
       padding-bottom: 12rem;
@@ -183,7 +183,8 @@
             color: $text-color-80;
           }
           h5 {
-            font-weight: 400;
+            font-family: "Raleway";
+            font-weight: 500;
             font-style: Regular;
             font-size: 2rem;
             line-height: 3rem;
@@ -194,3 +195,146 @@
         }
       }
     }
+
+    // blog-Top Head //
+    .blog-top-inner {
+      display: flex;
+      gap: 8.8rem;
+      align-items: center;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding-top: 12rem;
+        @media (max-width: 900px) {
+          flex-direction: column;
+        }
+        .blog-backbtn-blk{
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          cursor: pointer;
+          color: #333;
+          font-size: 14px;
+          font-weight: 500;
+          transition: color 0.3s ease;
+        
+          img {
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+          }
+        
+          &:hover {
+            color: #007bff; // or your brand blue
+          }
+        }
+
+        .blog-top-img {
+          position: relative;
+          flex: 0 0 45%;
+
+          @media (max-width: 900px) {
+            width: 100%;
+          }
+          
+          img {
+            width: 100%;
+            // border-radius: 10px;
+          }
+
+          .blog-label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #fff;
+            color: $text-color-2; // or a dark gray
+            padding: 10px 11px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            z-index: 2;
+            white-space: nowrap;
+            font-weight: 400;
+            
+            @media (max-width: 768px) {
+              font-size: 1rem;
+              padding: 4px 10px;
+            }
+          }
+        }
+        .blog-top-content {
+            flex: 1;
+            ul.blog-meta {
+              display: flex;
+              align-items: center;
+              gap: 25px;
+              color: #777;
+              font-size: 1.6rem; // increased font size
+              margin: 0;
+              padding: 0;
+              list-style: none;
+              
+              li {
+                position: relative;
+                padding-left: 23px;
+                font-weight: 300;
+                font-style: Light;
+                font-size: 22px;
+                line-height: 20px;
+                letter-spacing: 0%;
+                color: $text-color-50;
+                
+                &::before {
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 8px; // dot size increased
+                  height: 8px;
+                  background: $secondary-color; // blue dot
+                  border-radius: 50%;
+                }
+              }
+              .slash{
+                  padding: 0 10px 0;
+                }
+            }
+            
+            h2 {
+                padding-top: 2rem;
+                font-weight: 300;
+                font-style: Light;
+                font-size: 50px;
+                line-height: 50px;
+                letter-spacing: 0%;
+                color: $text-color;
+                margin: 0;
+            }
+        
+            p {
+                font-family: "Raleway";
+                font-weight: 500;
+                font-style: Medium;
+                font-size: 18px;
+                line-height: 30px;
+                letter-spacing: 0%;
+                color: $text-color-80;
+                margin: 0;
+                padding-top: 1rem;
+                padding-bottom: 4.7rem;
+              }
+        
+            .read-more-btn {
+              background: #000;
+              color: #fff;
+              padding: 10px 20px;
+              border-radius: 4px;
+              text-decoration: none;
+              transition: 0.3s;
+        
+              &:hover {
+                background: #333;
+              }
+            }  
+          }
+        }

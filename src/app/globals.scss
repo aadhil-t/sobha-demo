@@ -10,7 +10,7 @@
 @tailwind utilities;
 
 /* Your custom SASS variables and styles */
-$primary-color: #1d4ed8;
+$primary-color: $text-color;
 $bg-color: #FFFF;
 
 * {
@@ -19,7 +19,7 @@ $bg-color: #FFFF;
 	box-sizing: border-box;
 }
 html {
-	color: $primary-color;
+	color:$text-color;
 	font-size: 10px;	
 	scroll-behavior: smooth;
 	overflow-x: hidden;
@@ -28,10 +28,10 @@ html {
 body {
   font-family: "Archivo";
   background-color: $bg-color;
-  color: $primary-color;
+  color: $text-color;
   margin: 0;
-	font-size: 1.6rem;
-	overflow-x: hidden;
+  font-size: 1.6rem;
+  overflow-x: hidden;
 
   h1 {
     font-size: 3rem;
@@ -40,7 +40,7 @@ body {
 
   .container {
   width: 100%;
-  max-width: 1280px;  
+  max-width: 1320px;  
   margin: 0 auto;     
   padding: 0 20px;      
   box-sizing: border-box;
@@ -141,4 +141,43 @@ p{
 		@include desktopBody;
 	}
 }
+
+ul {
+  list-style: none; 
+  padding-left: 0;
+  margin: 0;
+
+  li {
+    color: $text-color;
+    position: relative;
+    padding-left: 16px; 
+    margin-bottom: 6px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background-color: $secondary-color; 
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+ol {
+  list-style: decimal; 
+  list-style-position: outside;
+  padding-left: 16px;
+  margin: 0;
+
+  li {
+    color: $text-color;
+    margin-bottom: 6px;
+  }
+}
+
+
 }
