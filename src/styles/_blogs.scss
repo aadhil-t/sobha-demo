@@ -132,9 +132,11 @@
       }
       .project-btm-blk{
         background: none;
+        text-decoration: none;
         .project-img{
             img{
                 max-width: 413px;
+                min-height: 400px;
             }
         }
         .project-text h5 {

@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../../styles/_sub-banner.scss";
 import "../../styles/_blogs.scss"
+import Link from "next/link";
 import Button from "../components/EnquireBtn";
 
 export default function Blogs() {
@@ -15,6 +16,50 @@ export default function Blogs() {
       mirror: false,
     });
   }, []);
+
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const res = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            query: `
+              {
+                posts(first: 50) {
+                  nodes {
+                    id
+                    title
+                    slug
+                    excerpt
+                    featuredImage {
+                      node {
+                        sourceUrl
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+          }),
+        });
+
+        const json = await res.json();
+        console.log("GraphQL Data:", json);
+
+        setPosts(json.data?.posts?.nodes || []);
+      } catch (err) {
+        console.error("Error fetching posts:", err);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
+
 
   return (
     <main>
@@ -58,11 +103,10 @@ export default function Blogs() {
                         </div>
                     </div>
                     </div>
-                    <div className="blog-btm-sec">
+                    {/* <div className="blog-btm-sec">
                         <div className="project-btm-sec" data-aos="fade-up">
                             <div className="project-btm-blk">
                                 <div className="project-img">
-                                {/* <span className="project-label">1-3 Bed Apartments</span> */}
                                 <img src="/assets/blogs/blg1.png" alt="Pierside Marina Residences" />
                                 </div>
                                 <div className="project-text">
@@ -72,7 +116,6 @@ export default function Blogs() {
                             </div>
                             <div className="project-btm-blk">
                                 <div className="project-img">
-                                {/* <span className="project-label">1-3 Bed Apartments</span> */}
                                 <img src="/assets/blogs/blg2.png" alt="Pierside Marina Residences" />
                                 </div>
                                 <div className="project-text">
@@ -82,7 +125,6 @@ export default function Blogs() {
                             </div>
                             <div className="project-btm-blk">
                                 <div className="project-img">
-                                {/* <span className="project-label">1-3 Bed Apartments</span> */}
                                 <img src="/assets/blogs/blg3.png" alt="Pierside Marina Residences" />
                                 </div>
                                 <div className="project-text">
@@ -92,7 +134,6 @@ export default function Blogs() {
                             </div>
                             <div className="project-btm-blk">
                                 <div className="project-img">
-                                {/* <span className="project-label">1-3 Bed Apartments</span> */}
                                 <img src="/assets/blogs/blg4.png" alt="Pierside Marina Residences" />
                                 </div>
                                 <div className="project-text">
@@ -102,7 +143,6 @@ export default function Blogs() {
                             </div>
                             <div className="project-btm-blk">
                                 <div className="project-img">
-                                {/* <span className="project-label">1-3 Bed Apartments</span> */}
                                 <img src="/assets/blogs/blg5.png" alt="Pierside Marina Residences" />
                                 </div>
                                 <div className="project-text">
@@ -112,7 +152,6 @@ export default function Blogs() {
                             </div>
                             <div className="project-btm-blk">
                                 <div className="project-img">
-                                {/* <span className="project-label">1-3 Bed Apartments</span> */}
                                 <img src="/assets/blogs/blg6.png" alt="Pierside Marina Residences" />
                                 </div>
                                 <div className="project-text">
@@ -121,7 +160,42 @@ export default function Blogs() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
+               
+<div className="blog-btm-sec">
+  <div className="project-btm-sec" data-aos="fade-up">
+    {posts.length > 0 ? (
+      posts.map((post, index) => (
+        <Link
+          key={post.id || index}
+          href={`/blogs/${post.slug}`} // 👈 dynamic route link
+          className="project-btm-blk"
+        >
+          <div className="project-img">
+            <img
+              src={
+                post.featuredImage?.node?.sourceUrl ||
+                `/assets/blogs/blg${(index % 6) + 1}.png`
+              }
+              alt={post.title}
+            />
+          </div>
+          <div className="project-text">
+            <h5>
+              {post.date
+                ? new Date(post.date).toLocaleDateString()
+                : new Date().toLocaleDateString()}
+            </h5>
+            <h4 dangerouslySetInnerHTML={{ __html: post.title }} />
+          </div>
+        </Link>
+      ))
+    ) : (
+      <p>No posts found.</p>
+    )}
+  </div>
+</div>
+
                 </div>
             </div>
         </div>

@@ -76,6 +76,13 @@
             }
             .project-btm-blk{
                 background: white;
+                text-decoration: none;
+                .project-img{
+                    img{
+                        max-width: 413px;
+                        min-height: 400px;  
+                    }
+                }
             }
         }
         .blog-top-sec{
@@ -85,6 +92,13 @@
                 padding-bottom: 4rem;
             }
             .detail-blog-blk{
+                img{
+                     width: 100%;
+                     max-width: 1280px;
+                     max-height: 523px;
+                     display: block;
+                     object-fit: cover;
+                }
                 .blog-detail-img{
                     width: 100%;
                     max-width: 1280px;
@@ -96,7 +110,6 @@
                         max-height: 523px;
                         display: block;
                         object-fit: cover;
-                        
                     }
                 }
             }
