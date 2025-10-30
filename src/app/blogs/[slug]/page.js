@@ -162,6 +162,8 @@ import "../../../styles/_blogs.scss";
 import "../../../styles/_blog-detail.scss";
 import Button from "../../components/EnquireBtn";
 
+export const runtime = "edge";
+
 export default function BlogDetail() {
   const { slug } = useParams(); // get slug from URL
   const [post, setPost] = useState(null);
