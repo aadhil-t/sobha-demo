@@ -164,39 +164,39 @@ export default function Blogs() {
                         </div>
                     </div> */}
                
-<div className="blog-btm-sec">
-  <div className="project-btm-sec" data-aos="fade-up">
-    {posts.length > 0 ? (
-      posts.map((post, index) => (
-        <Link
-          key={post.id || index}
-          href={`/blogs/${post.slug}`} // 👈 dynamic route link
-          className="project-btm-blk"
-        >
-          <div className="project-img">
-            <img
-              src={
-                post.featuredImage?.node?.sourceUrl ||
-                `/assets/blogs/blg${(index % 6) + 1}.png`
-              }
-              alt={post.title}
-            />
-          </div>
-          <div className="project-text">
-            <h5>
-              {post.date
-                ? new Date(post.date).toLocaleDateString()
-                : new Date().toLocaleDateString()}
-            </h5>
-            <h4 dangerouslySetInnerHTML={{ __html: post.title }} />
-          </div>
-        </Link>
-      ))
-    ) : (
-      <p>No posts found.</p>
-    )}
-  </div>
-</div>
+                    <div className="blog-btm-sec">
+                      <div className="project-btm-sec" data-aos="fade-up">
+                        {posts.length > 0 ? (
+                          posts.map((post, index) => (
+                            <Link
+                              key={post.id || index}
+                              href={`/blogs/${post.slug}`} // 👈 dynamic route link
+                              className="project-btm-blk"
+                            >
+                              <div className="project-img">
+                                <img
+                                  src={
+                                    post.featuredImage?.node?.sourceUrl ||
+                                    `/assets/blogs/blg${(index % 6) + 1}.png`
+                                  }
+                                  alt={post.title}
+                                />
+                              </div>
+                              <div className="project-text">
+                                <h5>
+                                  {post.date
+                                    ? new Date(post.date).toLocaleDateString()
+                                    : new Date().toLocaleDateString()}
+                                </h5>
+                                <h4 dangerouslySetInnerHTML={{ __html: post.title }} />
+                              </div>
+                            </Link>
+                          ))
+                        ) : (
+                          <p>No posts found.</p>
+                        )}
+                      </div>
+                    </div>
 
                 </div>
             </div>
