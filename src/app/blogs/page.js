@@ -7,7 +7,7 @@ import "../../styles/_blogs.scss"
 import Link from "next/link";
 import Button from "../components/EnquireBtn";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export default function Blogs() {
   // Initialize AOS
