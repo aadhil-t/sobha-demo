@@ -20,7 +20,7 @@ export default function Blogs() {
   }, []);
 
 
-  const [posts, setPosts] = useState([]);
+  // const [posts, setPosts] = useState([]);
   //   useEffect(() => {
   //   const fetchPosts = async () => {
   //     // 👇 Use Cloudflare variable or fallback to local WP
@@ -73,44 +73,44 @@ export default function Blogs() {
   // }, []);
 
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const res = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_API_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            query: `
-              {
-                posts(first: 50) {
-                  nodes {
-                    id
-                    title
-                    slug
-                    excerpt
-                    featuredImage {
-                      node {
-                        sourceUrl
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-          }),
-        });
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     try {
+  //       const res = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_API_URL, {
+  //         method: "POST",
+  //         headers: { "Content-Type": "application/json" },
+  //         body: JSON.stringify({
+  //           query: `
+  //             {
+  //               posts(first: 50) {
+  //                 nodes {
+  //                   id
+  //                   title
+  //                   slug
+  //                   excerpt
+  //                   featuredImage {
+  //                     node {
+  //                       sourceUrl
+  //                     }
+  //                   }
+  //                 }
+  //               }
+  //             }
+  //           `,
+  //         }),
+  //       });
 
-        const json = await res.json();
-        console.log("GraphQL Data:", json);
+  //       const json = await res.json();
+  //       console.log("GraphQL Data:", json);
 
-        setPosts(json.data?.posts?.nodes || []);
-      } catch (err) {
-        console.error("Error fetching posts:", err);
-      }
-    };
+  //       setPosts(json.data?.posts?.nodes || []);
+  //     } catch (err) {
+  //       console.error("Error fetching posts:", err);
+  //     }
+  //   };
 
-    fetchPosts();
-  }, []);
+  //   fetchPosts();
+  // }, []);
 
 
 
@@ -215,68 +215,68 @@ export default function Blogs() {
                         </div>
                     </div> */}
                     <div className="blog-btm-sec">
-  <div className="project-btm-sec" data-aos="fade-up">
-    <Link href="/blog-detail" className="project-btm-blk">
-      <div className="project-img">
-        <img src="/assets/blogs/blg1.png" alt="Luxury Living Redefined: Inside Sobha Skyvue Stellar" />
-      </div>
-      <div className="project-text">
-        <h5>Oct 22, 2025</h5>
-        <h4>Luxury Living Redefined: Inside Sobha Skyvue Stellar</h4>
-      </div>
-    </Link>
+                      <div className="project-btm-sec" data-aos="fade-up">
+                        <Link href="/blog-detail" className="project-btm-blk">
+                          <div className="project-img">
+                            <img src="/assets/blogs/blg1.png" alt="Luxury Living Redefined: Inside Sobha Skyvue Stellar" />
+                          </div>
+                          <div className="project-text">
+                            <h5>Oct 22, 2025</h5>
+                            <h4>Luxury Living Redefined: Inside Sobha Skyvue Stellar</h4>
+                          </div>
+                        </Link>
 
-    <Link href="/blog-detail" className="project-btm-blk">
-      <div className="project-img">
-        <img src="/assets/blogs/blg2.png" alt="How Sobha Hartland 2 Sets a New Benchmark for Modern Communities" />
-      </div>
-      <div className="project-text">
-        <h5>Oct 22, 2025</h5>
-        <h4>How Sobha Hartland 2 Sets a New Benchmark for Modern Communities</h4>
-      </div>
-    </Link>
+                        <Link href="/blog-detail" className="project-btm-blk">
+                          <div className="project-img">
+                            <img src="/assets/blogs/blg2.png" alt="How Sobha Hartland 2 Sets a New Benchmark for Modern Communities" />
+                          </div>
+                          <div className="project-text">
+                            <h5>Oct 22, 2025</h5>
+                            <h4>How Sobha Hartland 2 Sets a New Benchmark for Modern Communities</h4>
+                          </div>
+                        </Link>
 
-    <Link href="/blog-detail" className="project-btm-blk">
-      <div className="project-img">
-        <img src="/assets/blogs/blg3.png" alt="Why Waterfront Residences Are the Future of Urban Luxury" />
-      </div>
-      <div className="project-text">
-        <h5>Oct 22, 2025</h5>
-        <h4>Why Waterfront Residences Are the Future of Urban Luxury</h4>
-      </div>
-    </Link>
+                        <Link href="/blog-detail" className="project-btm-blk">
+                          <div className="project-img">
+                            <img src="/assets/blogs/blg3.png" alt="Why Waterfront Residences Are the Future of Urban Luxury" />
+                          </div>
+                          <div className="project-text">
+                            <h5>Oct 22, 2025</h5>
+                            <h4>Why Waterfront Residences Are the Future of Urban Luxury</h4>
+                          </div>
+                        </Link>
 
-    <Link href="/blog-detail" className="project-btm-blk">
-      <div className="project-img">
-        <img src="/assets/blogs/blg4.png" alt="Luxury Living Redefined: Inside Sobha Skyvue Stellar" />
-      </div>
-      <div className="project-text">
-        <h5>Oct 22, 2025</h5>
-        <h4>Luxury Living Redefined: Inside Sobha Skyvue Stellar</h4>
-      </div>
-    </Link>
+                        <Link href="/blog-detail" className="project-btm-blk">
+                          <div className="project-img">
+                            <img src="/assets/blogs/blg4.png" alt="Luxury Living Redefined: Inside Sobha Skyvue Stellar" />
+                          </div>
+                          <div className="project-text">
+                            <h5>Oct 22, 2025</h5>
+                            <h4>Luxury Living Redefined: Inside Sobha Skyvue Stellar</h4>
+                          </div>
+                        </Link>
 
-    <Link href="/blog-detail" className="project-btm-blk">
-      <div className="project-img">
-        <img src="/assets/blogs/blg5.png" alt="Luxury Living Redefined: Inside Sobha Skyvue Stellar" />
-      </div>
-      <div className="project-text">
-        <h5>Oct 22, 2025</h5>
-        <h4>Luxury Living Redefined: Inside Sobha Skyvue Stellar</h4>
-      </div>
-    </Link>
+                        <Link href="/blog-detail" className="project-btm-blk">
+                          <div className="project-img">
+                            <img src="/assets/blogs/blg5.png" alt="Luxury Living Redefined: Inside Sobha Skyvue Stellar" />
+                          </div>
+                          <div className="project-text">
+                            <h5>Oct 22, 2025</h5>
+                            <h4>Luxury Living Redefined: Inside Sobha Skyvue Stellar</h4>
+                          </div>
+                        </Link>
 
-    <Link href="/blog-detail" className="project-btm-blk">
-      <div className="project-img">
-        <img src="/assets/blogs/blg6.png" alt="Luxury Living Redefined: Inside Sobha Skyvue Stellar" />
-      </div>
-      <div className="project-text">
-        <h5>Oct 22, 2025</h5>
-        <h4>Luxury Living Redefined: Inside Sobha Skyvue Stellar</h4>
-      </div>
-    </Link>
-  </div>
-</div>
+                        <Link href="/blog-detail" className="project-btm-blk">
+                          <div className="project-img">
+                            <img src="/assets/blogs/blg6.png" alt="Luxury Living Redefined: Inside Sobha Skyvue Stellar" />
+                          </div>
+                          <div className="project-text">
+                            <h5>Oct 22, 2025</h5>
+                            <h4>Luxury Living Redefined: Inside Sobha Skyvue Stellar</h4>
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
 
                
                     {/* <div className="blog-btm-sec">
