@@ -21,11 +21,14 @@ export default function Blogs() {
 
 
   const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
+    useEffect(() => {
     const fetchPosts = async () => {
+      // 👇 Use Cloudflare variable or fallback to local WP
+      const apiURL =
+        process.env.NEXT_PUBLIC_WORDPRESS_API_URL || "http://sobha.local/graphql";
+
       try {
-        const res = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_API_URL, {
+        const res = await fetch(apiURL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -37,6 +40,7 @@ export default function Blogs() {
                     title
                     slug
                     excerpt
+                    date
                     featuredImage {
                       node {
                         sourceUrl
@@ -49,17 +53,64 @@ export default function Blogs() {
           }),
         });
 
+        if (!res.ok) {
+          console.error("Fetch failed:", res.status, res.statusText);
+          setPosts([]); // fallback to empty
+          return;
+        }
+
         const json = await res.json();
         console.log("GraphQL Data:", json);
 
         setPosts(json.data?.posts?.nodes || []);
       } catch (err) {
         console.error("Error fetching posts:", err);
+        setPosts([]);
       }
     };
 
     fetchPosts();
   }, []);
+
+
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     try {
+  //       const res = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_API_URL, {
+  //         method: "POST",
+  //         headers: { "Content-Type": "application/json" },
+  //         body: JSON.stringify({
+  //           query: `
+  //             {
+  //               posts(first: 50) {
+  //                 nodes {
+  //                   id
+  //                   title
+  //                   slug
+  //                   excerpt
+  //                   featuredImage {
+  //                     node {
+  //                       sourceUrl
+  //                     }
+  //                   }
+  //                 }
+  //               }
+  //             }
+  //           `,
+  //         }),
+  //       });
+
+  //       const json = await res.json();
+  //       console.log("GraphQL Data:", json);
+
+  //       setPosts(json.data?.posts?.nodes || []);
+  //     } catch (err) {
+  //       console.error("Error fetching posts:", err);
+  //     }
+  //   };
+
+  //   fetchPosts();
+  // }, []);
 
 
 
