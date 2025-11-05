@@ -167,14 +167,13 @@ export default function Home() {
               <TopHeadCnt
                 items={[
                   {
-                    heading: "About Us",
-                    subHeading: "Sobha Hartland",
-                    content: `Truly An International Luxury Developer in Dubai, Sobha Realty
-                      Developing some of the best masterpieces in Hartland (freehold
-                      community) spread over 8 million sq. ft. Sobha Dubai’s residential
-                      communities with the best community amenities are perfect for leisure
-                      and hospitality. As well, Dubai’s most popular retail stores, malls,
-                      markets, and commercial developments are nearby.`
+                    heading: "Sobha Realty",
+                    subHeading: "Building Excellence for Generations",
+                    content: ` At Sobha Realty, we pride ourselves on our uncompromising standards. 
+                    Our focus on craftsmanship and detailing is a part of our legacy, spanning five 
+                    decades. So while others may consider minor details to be minor, we understand 
+                    how these little aspects come together to create an extraordinary living 
+                    experience.`
                   }
                 ]}
               />
@@ -225,7 +224,8 @@ export default function Home() {
               <div className="project-top-blk" data-aos="fade-up">
                 <div className="project-img">
                   <span className="project-label">1 & 2 BHK</span>
-                  <img src="/assets/project1.png" alt="Canalside Marina Residences" />
+                  {/* <img src="/assets/project1.png" alt="Canalside Marina Residences" /> */}
+                  <img src="/assets/beachside.png" alt="Canalside Marina Residences" />
                 </div>
                 <div className="project-text">
                   <h4>Canalside Marina Residences</h4>
@@ -237,7 +237,7 @@ export default function Home() {
               <div className="project-top-blk" data-aos="fade-up">
                 <div className="project-img">
                   <span className="project-label">1,2&3 Bed Apartments</span>
-                  <img src="/assets/project2.png" alt="Canalside Marina Residences" />
+                  <img src="/assets/aquacrust.png" alt="Canalside Marina Residences" />
                 </div>
                 <div className="project-text">
                   <h4>Pierside Marina Residences</h4>
@@ -251,7 +251,7 @@ export default function Home() {
               <div className="project-btm-blk">
                 <div className="project-img">
                   <span className="project-label">1-3 Bed Apartments</span>
-                  <img src="/assets/btm-pro1.png" alt="Pierside Marina Residences" />
+                  <img src="/assets/skypark.png" alt="Pierside Marina Residences" />
                 </div>
                   <div className="project-text">
                     <h4>Pierside Marina Residences</h4>
@@ -262,7 +262,7 @@ export default function Home() {
               <div className="project-btm-blk">
                 <div className="project-img">
                   <span className="project-label">1-3 Bed Apartments</span>
-                  <img src="/assets/btm-pro2.png" alt="Pierside Marina Residences" />
+                  <img src="/assets/building2.png" alt="Pierside Marina Residences" />
                 </div>
                   <div className="project-text">
                     <h4>Pierside Marina Residences</h4>
@@ -273,7 +273,7 @@ export default function Home() {
               <div className="project-btm-blk">
                 <div className="project-img">
                   <span className="project-label">1-3 Bed Apartments</span>
-                  <img src="/assets/btm-pro3.png" alt="Pierside Marina Residences" />
+                  <img src="/assets/building3.png" alt="Pierside Marina Residences" />
                 </div>
                   <div className="project-text">
                     <h4>Pierside Marina Residences</h4>
@@ -281,7 +281,7 @@ export default function Home() {
                     <h5>From 1.59M AED</h5>
                 </div>
               </div>
-              <div className="project-btm-blk">
+              {/* <div className="project-btm-blk">
                 <div className="project-img">
                   <span className="project-label">1-3 Bed Apartments</span>
                   <img src="/assets/btm-pro4.png" alt="Pierside Marina Residences" />
@@ -312,6 +312,32 @@ export default function Home() {
                     <h4>Pierside Marina Residences</h4>
                     <p>Siniya Island</p>
                     <h5>From 1.59M AED</h5>
+                </div>
+              </div> */}
+            </div>
+            <div className="project-top-sec">
+              <div className="project-btm-blk" data-aos="fade-up">
+                <div className="project-img">
+                  <span className="project-label">1 & 2 BHK</span>
+                  {/* <img src="/assets/project1.png" alt="Canalside Marina Residences" /> */}
+                  <img src="/assets/beachside.png" alt="Canalside Marina Residences" />
+                </div>
+                <div className="project-text">
+                  <h4>Canalside Marina Residences</h4>
+                  <p>Siniya Island</p>
+                  <h5>From 1.59M AED</h5>
+                </div>
+              </div>
+
+              <div className="project-btm-blk" data-aos="fade-up">
+                <div className="project-img">
+                  <span className="project-label">1,2&3 Bed Apartments</span>
+                  <img src="/assets/aquacrust.png" alt="Canalside Marina Residences" />
+                </div>
+                <div className="project-text">
+                  <h4>Pierside Marina Residences</h4>
+                  <p>Siniya Island</p>
+                  <h5>From 1.59M AED</h5>
                 </div>
               </div>
             </div>

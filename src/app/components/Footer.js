@@ -65,15 +65,13 @@ export default function Footer() {
         </div>
 
         <div className="disclaimer" data-aos="fade-up">
-          <strong>Disclaimer:</strong> Iaculis aliquam scelerisque odio justo eget justo duis egestas.
-          Tristique quis at volutpat nec mi. Faucibus interdum pretium tellus velit purus dui sed tellus. Ac facilisis 
-          risus risus at pharetra fringilla integer tellus. Dignissim eget facilisis ac est maecenas egestas ut sed. 
-          Cursus euismod tempus ipsum dui diam arcu ut ut at. Et sodales risus id est odio arcu feugiat. Lobortis rhoncus 
-          sed nec cras. Vel mollis venenatis  Iaculis aliquam scelerisque odio justo eget justo duis egestas. Tristique 
-          quis at volutpat nec mi. Faucibus interdum pretium tellus velit purus dui sed tellus. Ac facilisis risus risus 
-          at pharetra fringilla integer tellus. Dignissim eget facilisis ac est maecenas egestas ut sed. Cursus euismod 
-          tempus ipsum dui diam arcu ut ut at. Et sodales risus id est odio arcu feugiat. Lobortis rhoncus sed nec cras. 
-          Vel mollis venenatis 
+          <strong>Disclaimer:</strong> All information provided on this website is for informational 
+          purposes only and does not constitute an offer, solicitation, or advice to buy or sell real 
+          estate. Prices, availability, and project details are subject to change without notice and 
+          may vary based on market conditions and developer policies. While we strive to ensure the 
+          accuracy of the content, we do not guarantee the completeness or reliability of the information 
+          presented. Prospective buyers or investors are encouraged to conduct their own due diligence and 
+          consult legal or financial advisors. 
         </div>
 
         <div className="bottomBar">

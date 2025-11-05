@@ -120,7 +120,8 @@
       grid-template-columns: repeat(auto-fit, minmax(314px, 1fr));
       gap: 20px;
       row-gap: 80px; 
-      padding-bottom: 12rem;
+      // padding-bottom: 12rem;
+      // padding-bottom: ;
       @media (max-width: 768px) {
         padding-bottom: 3rem;
         
