@@ -180,16 +180,16 @@ export default function Home() {
               <div className="abt-btm-sec" >
                 <div className="abt-stat-blk" data-aos="fade-up">
                   <div className="stat-head">
-                    <h2>8M+</h2>
-                    <h5>Total Land Area</h5>
+                    <h2>50</h2>
+                    <h5>Years of incredible legacy </h5>
                   </div>
                   <div className="stat-head">
-                    <h2>12K+</h2>
-                    <h5>Residential Units</h5>
+                    <h2>8Mn</h2>
+                    <h5>Square Feet of land area developed</h5>
                   </div>
                   <div className="stat-head">
-                    <h2>39%</h2>
-                    <h5>Open Spaces</h5>
+                    <h2>10%</h2>
+                    <h5>Market Share in Dubai</h5>
                   </div>
                 </div>
                 <div className="abt-img-blk" data-aos="fade-up">
