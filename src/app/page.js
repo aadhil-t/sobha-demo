@@ -50,16 +50,23 @@ export default function Home() {
   // };
 
 const swiperRef = useRef(null);
-  const [allowTouch, setAllowTouch] = useState(window.innerWidth > 768);
+  // const [allowTouch, setAllowTouch] = useState(window.innerWidth > 768);
+  
 
   // ✅ Disable touch slide only on mobile (but keep page scroll working)
-  useEffect(() => {
-    const handleResize = () => {
-      setAllowTouch(window.innerWidth > 768);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+const [allowTouch, setAllowTouch] = useState(false);
+
+// Run only on client
+useEffect(() => {
+  setAllowTouch(window.innerWidth > 768);
+
+  const handleResize = () => {
+    setAllowTouch(window.innerWidth > 768);
+  };
+
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
 
   // ✅ Stop Swiper from preventing page scroll on mobile
   useEffect(() => {
