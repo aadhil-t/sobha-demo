@@ -39,16 +39,15 @@ export default function Footer() {
             <p>Our Projects</p>
             <div className='project-blk'>
               <ul className='pro-ul'>
-                <li><a href="#">Sobha The S Tower</a></li>
-                <li><a href="#">Sobha Hartland Heights</a></li>
-                <li><a href="#">Sobha Waves Heights</a></li>
-                <li><a href="#">Sobha Waves Opulence</a></li>
+                <li><a href="#">Pearlside Marina Residence</a></li>
+                <li><a href="#">Aquamarine Beach Residences</a></li>
+                <li><a href="#">Sobha Skyparks</a></li>
+                <li><a href="#">Sobha Central</a></li>
               </ul>
               <ul className='pro-ul'>
-                <li><a href="#">Sobha Seahaven</a></li>
-                <li><a href="#">SOBHA Marina Dubai</a></li>
-                <li><a href="#">Sobha Delphine Beach Residences</a></li>
-                <li><a href="#">Sobha Solis</a></li>
+                <li><a href="#">Pierside Marina Residences</a></li>
+                <li><a href="#">Canalside Marina Residences</a></li>
+                <li><a href="#">Sobha Elwood</a></li>
               </ul>
             </div>
           </div>

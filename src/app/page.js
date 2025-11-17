@@ -382,7 +382,7 @@ useEffect(() => {
                   <img src="/assets/sobha-aquacrust.png" alt="Canalside Marina Residences" />
                 </div>
                 <div className="project-text">
-                  <h4>Pierside Marina Residences</h4>
+                  <h4>Sobha Elwood</h4>
                   <p>Siniya Island</p>
                   <h5>From 1.59M AED</h5>
                 </div>
