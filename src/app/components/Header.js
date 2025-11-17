@@ -69,6 +69,25 @@ export default function Header() {
         <span></span>
       </div>
     </div>
+            <div className="media-btn-blk">
+              <Link href="/callback" className="btn primary" data-aos="">
+                {/* Call Back */}
+                <img
+                  src="/assets/call.svg"
+                  alt="Call Back"
+                  className="icon"
+                />
+              </Link>
+
+              <Link href="/whatsapp" className="btn green" data-aos="">
+                {/* WhatsApp */}
+                <img
+                  src="/assets/whatsapp.svg"
+                  alt="WhatsApp"
+                  className="icon"
+                />
+              </Link>
+            </div>
   </div>
 </header>
 

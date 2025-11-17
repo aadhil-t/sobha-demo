@@ -32,7 +32,6 @@
             height: auto;
             display: block;
             max-height: 435px;
-            object-fit: cover;
           }
           .project-label {
             position: absolute;
@@ -98,6 +97,7 @@
             max-height: 435px;
             min-height: 435px;
             object-fit: cover;
+            object-position: bottom;
           }
           .project-label {
             position: absolute;

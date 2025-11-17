@@ -169,4 +169,37 @@
       display: none;
     }
   }
+
+    
+  .media-btn-blk {
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.1rem;
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    flex-direction: column;
+
+  
+    .btn-media {
+      display: flex;
+      align-items: center;
+      background-color: $black;
+      gap: 7px;
+      padding: 8px 12px;
+      text-decoration: none;
+      color: white;
+      font-family: "DM Sans";
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 18px;
+      line-height: 20px;
+      letter-spacing: 0%;
+  
+      &.green-btn {           
+        background-color: $green-color;
+      }
+    }
+  }
 }

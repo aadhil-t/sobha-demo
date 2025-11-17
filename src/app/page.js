@@ -275,9 +275,9 @@ useEffect(() => {
                   <img src="/assets/beachside.png" alt="Canalside Marina Residences" />
                 </div>
                 <div className="project-text">
-                  <h4>Canalside Marina Residences</h4>
-                  <p>Siniya Island</p>
-                  <h5>From 1.59M AED</h5>
+                  <h4>Pearlside Marina Residence</h4>
+                  <p>Marjan Island</p>
+                  <h5>From 1.40M AED</h5>
                 </div>
               </div>
 
@@ -287,9 +287,9 @@ useEffect(() => {
                   <img src="/assets/aquacrust.png" alt="Canalside Marina Residences" />
                 </div>
                 <div className="project-text">
-                  <h4>Pierside Marina Residences</h4>
-                  <p>Siniya Island</p>
-                  <h5>From 1.59M AED</h5>
+                  <h4>Aquamarine Beach Residences</h4>
+                  <p>Marjan Island</p>
+                  <h5>From 1.55M AED</h5>
                 </div>
               </div>
             </div>
@@ -301,9 +301,9 @@ useEffect(() => {
                   <img src="/assets/skypark.png" alt="Pierside Marina Residences" />
                 </div>
                   <div className="project-text">
-                    <h4>Pierside Marina Residences</h4>
-                    <p>Siniya Island</p>
-                    <h5>From 1.59M AED</h5>
+                    <h4>Sobha Skyparks</h4>
+                    <p>Business Bay</p>
+                    <h5>From 2.88M AED</h5>
                 </div>
               </div>
               <div className="project-btm-blk">
@@ -312,7 +312,7 @@ useEffect(() => {
                   <img src="/assets/building2.png" alt="Pierside Marina Residences" />
                 </div>
                   <div className="project-text">
-                    <h4>Pierside Marina Residences</h4>
+                    <h4>Sobha Central</h4>
                     <p>Siniya Island</p>
                     <h5>From 1.59M AED</h5>
                 </div>
@@ -367,7 +367,7 @@ useEffect(() => {
                 <div className="project-img">
                   <span className="project-label">1 & 2 BHK</span>
                   {/* <img src="/assets/project1.png" alt="Canalside Marina Residences" /> */}
-                  <img src="/assets/beachside.png" alt="Canalside Marina Residences" />
+                  <img src="/assets/sobha-central.png" alt="Canalside Marina Residences" />
                 </div>
                 <div className="project-text">
                   <h4>Canalside Marina Residences</h4>
@@ -379,7 +379,7 @@ useEffect(() => {
               <div className="project-btm-blk" data-aos="fade-up">
                 <div className="project-img">
                   <span className="project-label">1,2&3 Bed Apartments</span>
-                  <img src="/assets/aquacrust.png" alt="Canalside Marina Residences" />
+                  <img src="/assets/sobha-aquacrust.png" alt="Canalside Marina Residences" />
                 </div>
                 <div className="project-text">
                   <h4>Pierside Marina Residences</h4>
