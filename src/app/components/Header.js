@@ -50,7 +50,7 @@ export default function Header() {
       {/* Logo */}
       <div className={`logo-blk ${isMenuOpen ? "menu-open" : ""}`}>
         <Link href="/">
-          <img src="/assets/logo-bnr.svg" alt="Sobha Banner" />
+          <img src="/assets/Sobha-reality-white.png" alt="Sobha Banner" />
         </Link>
       </div>
 

@@ -9,7 +9,7 @@ export default function Footer() {
       <div className='container'>
         <div className='logo-wrappper'>
           <div className='logo-blk'>
-              <img src="/assets/icons/sobha-footicon.svg" data-aos="fade-right" alt="Phone" />
+              <img src="/assets/icons/Sobha-reality-black.png" data-aos="fade-right" alt="Phone" />
               <h4 data-aos="fade-left">Looking for the perfect investment? Secure your Sobha residence now.</h4>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Footer() {
         <div className="bottomBar">
           <span>
             Copyright © 
-            <a href="https://www.sobhadubai-ae.com"> www.sobhadubai-ae.com</a> - 2025 | All Right Reserved
+            <a href="https://www.sobhadubai-ae.com"> Propey.com</a> - 2025 | All Right Reserved
           </span>
           <div className='bottomBar-privacy'>
             <a href="#">Privacy Policy </a> | <a href="#"> Sitemap</a>
