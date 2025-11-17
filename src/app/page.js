@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef  } from 'react';
+import React, { useEffect, useRef, useState   } from 'react';
 import Image from "next/image";
 import "./home.scss";
 import "../styles/_about.scss";
@@ -30,9 +30,48 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
 
-  const swiperRef = useRef(null);
 
-  // On slide change, animate only active slide h1
+  // // On slide change, animate only active slide h1
+  // const handleSlideChange = () => {
+  //   const swiper = swiperRef.current.swiper;
+  //   const slides = swiper.slides;
+
+  //   slides.forEach((slide) => {
+  //     const heading = slide.querySelector(".banner-text h1");
+  //     if (heading) heading.classList.remove("animate");
+  //   });
+
+  //   const activeSlide = slides[swiper.activeIndex];
+  //   const activeHeading = activeSlide.querySelector(".banner-text h1");
+  //   if (activeHeading) {
+  //     void activeHeading.offsetWidth; // trigger reflow
+  //     activeHeading.classList.add("animate");
+  //   }
+  // };
+
+const swiperRef = useRef(null);
+  const [allowTouch, setAllowTouch] = useState(window.innerWidth > 768);
+
+  // ✅ Disable touch slide only on mobile (but keep page scroll working)
+  useEffect(() => {
+    const handleResize = () => {
+      setAllowTouch(window.innerWidth > 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // ✅ Stop Swiper from preventing page scroll on mobile
+  useEffect(() => {
+    const swiper = swiperRef.current?.swiper;
+    if (swiper) {
+      swiper.allowTouchMove = allowTouch;
+      swiper.el.style.touchAction = allowTouch ? "pan-y" : "auto"; 
+      // 👆 ensures vertical page scroll works when touch is disabled
+    }
+  }, [allowTouch]);
+
+  // ✅ On slide change, animate only active slide h1
   const handleSlideChange = () => {
     const swiper = swiperRef.current.swiper;
     const slides = swiper.slides;
@@ -49,7 +88,7 @@ export default function Home() {
       activeHeading.classList.add("animate");
     }
   };
-
+  
   // Trigger animation on first load
   useEffect(() => {
     setTimeout(() => {
@@ -125,13 +164,14 @@ export default function Home() {
         className="banner-swiper"
         modules={[Pagination, Autoplay]}
           direction="vertical"            
-        pagination={{ clickable: true }}
+        pagination={{ clickable: false }}
         autoplay={{
           delay: 4000,
           disableOnInteraction: false,
         }}
         loop={true}
         onSlideChange={handleSlideChange}
+        allowTouchMove={allowTouch} // 👈 disables swipe only on mobile
       >
         {/* Slide 1 */}
         <SwiperSlide>
