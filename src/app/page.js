@@ -169,7 +169,7 @@ useEffect(() => {
       <Swiper
       ref={swiperRef}
         className="banner-swiper"
-        // modules={[Pagination, Autoplay]}
+        modules={[Pagination, Autoplay]}
           direction="vertical"            
         pagination={{ clickable: false }}
         autoplay={{
@@ -182,7 +182,7 @@ useEffect(() => {
       >
         {/* Slide 1 */}
         <SwiperSlide>
-          <div className="banner-image" style={{ backgroundImage: 'url("/assets/banner.png")' }}>
+          <div className="banner-image" style={{ backgroundImage: 'url("/assets/bnr1.png")' }}>
             <div className="container banner-text">
               <h1 >
                 Explore An Exclusive Lifestyle in the Heart of <span>Dubai</span>
@@ -193,7 +193,18 @@ useEffect(() => {
 
         {/* Slide 2 */}
         <SwiperSlide>
-          <div className="banner-image" style={{ backgroundImage: 'url("/assets/banner.png")' }}>
+          <div className="banner-image" style={{ backgroundImage: 'url("/assets/bnr2.png")' }}>
+            <div className="container banner-text">
+              <h1  >
+                Discover The Luxury Living You <span>Deserve</span>
+              </h1>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        {/* Slide 3 */}
+        <SwiperSlide>
+          <div className="banner-image" style={{ backgroundImage: 'url("/assets/bnr3.png")' }}>
             <div className="container banner-text">
               <h1  >
                 Discover The Luxury Living You <span>Deserve</span>

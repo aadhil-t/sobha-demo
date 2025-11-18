@@ -93,7 +93,7 @@
     /* Pagination styling */
     .swiper-pagination-bullets {
       bottom: 30px;
-      right: 95px;
+      right: 65px;
       @media (max-width: 1140px) {
         bottom: 305px;
         right: 20px;  
@@ -116,71 +116,159 @@
   }
 
   /* Banner Image and Text */
+  // .banner-image {
+  //   position: relative;
+  //   width: 100%;
+  //   height: 100%;
+  //   max-height: 932px;
+  //   background-size: cover;
+  //   background-position: bottom;
+  //   background-repeat: no-repeat;
+  //   @media (min-width: 1800px) {
+  //     background-position: 0 -250px;
+  //   }
+
+  //   @media (max-width: 500px) {
+  //     height: 100vh;
+  //   }
+
+  //   .banner-text {
+  //     padding-top: 186px;
+  //     color: white;
+  //     @media (max-width:500px) {
+  //       padding-top: 145px;
+  //     }
+
+  //     @media (min-width: 1800px) {
+  //       padding-top: 120px;
+  //     }
+
+  //     h1 {
+  //       max-width: 97rem;
+  //       font-style: Light;
+  //       text-transform: uppercase;
+  //       @media (max-width:500px) {
+  //         font-size: 4.5rem;
+  //         max-width: 100rem;
+  //       }
+  //     }
+
+  //     span {
+  //       @include desktoptitle;
+  //       color: $primary-color;
+  //       font-weight: 600;
+
+  //       @media (max-width: 1050px) {
+  //         @include smalldesktoptitle;
+  //         font-weight: 600;
+  //       }
+
+  //       @media (max-width: 800px) {
+  //         @include tabtitle;
+  //         font-weight: 600;
+  //       }
+
+  //       @media (max-width: 500px) {
+  //         @include mobiletitle;
+  //         font-weight: 600;
+  //       }
+  //     }
+
+  //     p {
+  //       font-size: 1.5rem;
+  //     }
+  //   }
+  // }
+
   .banner-image {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-height: 932px;
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 932px;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  overflow: hidden;
 
-    @media (min-width: 1800px) {
-      background-position: 0 -250px;
-    }
-
-    @media (max-width: 500px) {
-      height: 100vh;
-    }
-
-    .banner-text {
-      padding-top: 186px;
-      color: white;
-      @media (max-width:500px) {
-        padding-top: 145px;
-      }
-
-      @media (min-width: 1800px) {
-        padding-top: 120px;
-      }
-
-      h1 {
-        max-width: 100rem;
-        font-style: Light;
-        text-transform: uppercase;
-        @media (max-width:500px) {
-          font-size: 4.5rem;
-          max-width: 100rem;
-        }
-      }
-
-      span {
-        @include desktoptitle;
-        color: $secondary-color;
-        font-weight: 600;
-
-        @media (max-width: 1050px) {
-          @include smalldesktoptitle;
-          font-weight: 600;
-        }
-
-        @media (max-width: 800px) {
-          @include tabtitle;
-          font-weight: 600;
-        }
-
-        @media (max-width: 500px) {
-          @include mobiletitle;
-          font-weight: 600;
-        }
-      }
-
-      p {
-        font-size: 1.5rem;
-      }
-    }
+  @media (min-width: 1800px) {
+    background-position: 0 -250px;
   }
 
+  @media (max-width: 500px) {
+    height: 100vh;
+  }
+
+  // 👉 GRADIENT OVERLAY HERE
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.20),  /* stronger at top */
+      rgba(0, 0, 0, 0.20),  /* softer at middle */
+      rgba(0, 0, 0, 0.20)   /* almost gone bottom */
+    );
+
+    pointer-events: none;
+  }
+
+  /* ensure text is above gradient */
+  .banner-text {
+    padding-top: 186px;
+    color: white;
+    position: relative;
+    z-index: 2;
+    @media (max-width:500px) {
+      padding-top: 145px;
+    }
+    
+    @media (min-width: 1800px) {
+      padding-top: 120px;
+    }
+
+    h1 {
+      max-width: 97rem;
+      font-style: Light;
+      text-transform: uppercase;
+      @media (max-width:500px) {
+        font-size: 4.5rem;
+        max-width: 100rem;
+      }
+    }
+
+    span {
+      @include desktoptitle;
+      color: $primary-color;
+      font-weight: 600;
+
+      @media (max-width: 1050px) {
+        @include smalldesktoptitle;
+        font-weight: 600;
+      }
+
+      @media (max-width: 800px) {
+        @include tabtitle;
+        font-weight: 600;
+      }
+
+      @media (max-width: 500px) {
+        @include mobiletitle;
+        font-weight: 600;
+      }
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
+  
   .explore-circle {
   position: absolute;
   top: 23%;
