@@ -169,7 +169,7 @@ useEffect(() => {
       <Swiper
       ref={swiperRef}
         className="banner-swiper"
-        modules={[Pagination, Autoplay]}
+        // modules={[Pagination, Autoplay]}
           direction="vertical"            
         pagination={{ clickable: false }}
         autoplay={{
