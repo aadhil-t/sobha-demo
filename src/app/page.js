@@ -157,11 +157,19 @@ useEffect(() => {
     };
   }, []);
 
-  
+  // mobile banner handler //
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 500);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
   return (
     <main>
       {/* Banner Section */}
-    <div className="home-banner">
+    {/* <div className="home-banner">
         <div className="explore-circle">
           <span>• Explore</span>
         </div>
@@ -169,7 +177,7 @@ useEffect(() => {
       <Swiper
       ref={swiperRef}
         className="banner-swiper"
-        // modules={[Pagination, Autoplay]}
+        modules={[Pagination, Autoplay]}
           direction="vertical"            
         pagination={{ clickable: false }}
         autoplay={{
@@ -178,9 +186,8 @@ useEffect(() => {
         }}
         loop={true}
         onSlideChange={handleSlideChange}
-        allowTouchMove={allowTouch} // 👈 disables swipe only on mobile
+        allowTouchMove={allowTouch} 
       >
-        {/* Slide 1 */}
         <SwiperSlide>
           <div className="banner-image" style={{ backgroundImage: 'url("/assets/bnr1.png")' }}>
             <div className="container banner-text">
@@ -191,7 +198,6 @@ useEffect(() => {
           </div>
         </SwiperSlide>
 
-        {/* Slide 2 */}
         <SwiperSlide>
           <div className="banner-image" style={{ backgroundImage: 'url("/assets/bnr2.png")' }}>
             <div className="container banner-text">
@@ -202,7 +208,6 @@ useEffect(() => {
           </div>
         </SwiperSlide>
 
-        {/* Slide 3 */}
         <SwiperSlide>
           <div className="banner-image" style={{ backgroundImage: 'url("/assets/bnr3.png")' }}>
             <div className="container banner-text">
@@ -213,9 +218,99 @@ useEffect(() => {
           </div>
         </SwiperSlide>
 
-        {/* Add more slides as needed */}
       </Swiper>
+    </div> */}
+
+    {/* mobile and desktop banner section */}
+    <div className="home-banner">
+      <div className="explore-circle">
+        <span>• Explore</span>
+      </div>
+      <span className="banner-line-right" />
+
+      {/* ---------------------------- */}
+      {/* MOBILE SWIPER (below 500px) */}
+      {/* ---------------------------- */}
+      {isMobile ? (
+        <Swiper
+          className="banner-swiper-mobile"
+          modules={[Pagination, Autoplay]}
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+        >
+          <SwiperSlide>
+            <div className="banner-image" style={{ backgroundImage: 'url("/assets/mbbnr1.png")' }}>
+              <div className="container banner-text">
+                <h1>Explore An Exclusive Lifestyle in the Heart of <span>Dubai</span></h1>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="banner-image" style={{ backgroundImage: 'url("/assets/mbbnr2.png")' }}>
+              <div className="container banner-text">
+                <h1>Discover The Luxury Living You <span>Deserve</span></h1>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="banner-image" style={{ backgroundImage: 'url("/assets/mbbnr3.png")' }}>
+              <div className="container banner-text">
+                <h1>Discover The Luxury Living You <span>Deserve</span></h1>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      ) : (
+        /* ---------------------------- */
+        /* DESKTOP SWIPER (existing)   */
+        /* ---------------------------- */
+        <Swiper
+          ref={swiperRef}
+          className="banner-swiper"
+          modules={[Pagination, Autoplay]}
+          direction="vertical"
+          pagination={{ clickable: false }}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          onSlideChange={handleSlideChange}
+          allowTouchMove={allowTouch}
+        >
+          <SwiperSlide>
+            <div className="banner-image" style={{ backgroundImage: 'url("/assets/bnr1.png")' }}>
+              <div className="container banner-text">
+                <h1>Explore An Exclusive Lifestyle in the Heart of <span>Dubai</span></h1>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="banner-image" style={{ backgroundImage: 'url("/assets/bnr2.png")' }}>
+              <div className="container banner-text">
+                <h1>Discover The Luxury Living You <span>Deserve</span></h1>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="banner-image" style={{ backgroundImage: 'url("/assets/bnr3.png")' }}>
+              <div className="container banner-text">
+                <h1>Discover The Luxury Living You <span>Deserve</span></h1>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      )}
     </div>
+
 
       {/* About Section */}
       <div className="about-section">
