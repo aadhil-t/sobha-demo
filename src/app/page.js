@@ -1,5 +1,5 @@
-'use client';
-import React, { useEffect, useRef, useState   } from 'react';
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import "./home.scss";
 import "../styles/_about.scss";
@@ -8,11 +8,11 @@ import "../styles/_our-specialities.scss";
 import "../styles/_why-dubai.scss";
 import "../styles/_dream-home.scss";
 import "../styles/_faq.scss";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination , Autoplay} from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
 import { initAccordion } from "../app/faq";
 import Button from "../app/components/EnquireBtn";
 import TopHeadCnt from "../app/components/Topheadcnt";
@@ -21,16 +21,13 @@ import FaqSection from "./components/faqSec";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // AOS //
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import EnqSetion from './components/EnqSec';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import EnqSetion from "./components/EnqSec";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 export default function Home() {
-
-
   // // On slide change, animate only active slide h1
   // const handleSlideChange = () => {
   //   const swiper = swiperRef.current.swiper;
@@ -49,31 +46,30 @@ export default function Home() {
   //   }
   // };
 
-const swiperRef = useRef(null);
+  const swiperRef = useRef(null);
   // const [allowTouch, setAllowTouch] = useState(window.innerWidth > 768);
-  
 
   // ✅ Disable touch slide only on mobile (but keep page scroll working)
-const [allowTouch, setAllowTouch] = useState(false);
+  const [allowTouch, setAllowTouch] = useState(false);
 
-// Run only on client
-useEffect(() => {
-  setAllowTouch(window.innerWidth > 768);
-
-  const handleResize = () => {
+  // Run only on client
+  useEffect(() => {
     setAllowTouch(window.innerWidth > 768);
-  };
 
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
+    const handleResize = () => {
+      setAllowTouch(window.innerWidth > 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // ✅ Stop Swiper from preventing page scroll on mobile
   useEffect(() => {
     const swiper = swiperRef.current?.swiper;
     if (swiper) {
       swiper.allowTouchMove = allowTouch;
-      swiper.el.style.touchAction = allowTouch ? "pan-y" : "auto"; 
+      swiper.el.style.touchAction = allowTouch ? "pan-y" : "auto";
       // 👆 ensures vertical page scroll works when touch is disabled
     }
   }, [allowTouch]);
@@ -95,15 +91,16 @@ useEffect(() => {
       activeHeading.classList.add("animate");
     }
   };
-  
+
   // Trigger animation on first load
   useEffect(() => {
     setTimeout(() => {
-      const firstHeading = document.querySelector(".swiper-slide-active .banner-text h1");
+      const firstHeading = document.querySelector(
+        ".swiper-slide-active .banner-text h1"
+      );
       if (firstHeading) firstHeading.classList.add("animate");
     }, 100); // small delay so Swiper is initialized
   }, []);
-
 
   useEffect(() => {
     // Initialize AOS once
@@ -115,7 +112,7 @@ useEffect(() => {
   }, []);
 
   // Accordian //
-    useEffect(() => {
+  useEffect(() => {
     initAccordion();
   }, []);
 
@@ -124,20 +121,21 @@ useEffect(() => {
     const section = document.querySelector(".why-dubai-section");
     const swiperWrapper = section.querySelector(".swiper-wrapper");
     const slides = section.querySelectorAll(".swiper-slide");
-  
+
     // Get total width of all slides combined (including margins)
     let totalWidth = 0;
     slides.forEach((slide, index) => {
       const style = window.getComputedStyle(slide);
       const marginRight = parseFloat(style.marginRight);
       // Add margin for all slides except last
-      totalWidth += slide.offsetWidth + (index < slides.length - 1 ? marginRight : 0);
+      totalWidth +=
+        slide.offsetWidth + (index < slides.length - 1 ? marginRight : 0);
     });
-  
+
     // Horizontal scroll: move wrapper right
     gsap.set(swiperWrapper, { x: 0 });
-  
-      const scrollTween = gsap.to(swiperWrapper, {
+
+    const scrollTween = gsap.to(swiperWrapper, {
       x: () => totalWidth - window.innerWidth, // move right fully until last slide
       ease: "none",
       scrollTrigger: {
@@ -149,7 +147,7 @@ useEffect(() => {
         anticipatePin: 1,
       },
     });
-  
+
     // Cleanup
     return () => {
       scrollTween.scrollTrigger?.kill();
@@ -158,19 +156,22 @@ useEffect(() => {
   }, []);
 
   // mobile banner handler //
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined" ? window.innerWidth <= 500 : false
+  );
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 500);
-    handleResize(); 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 500);
+    };
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
   return (
     <main>
       {/* Banner Section */}
-    {/* <div className="home-banner">
+      {/* <div className="home-banner">
         <div className="explore-circle">
           <span>• Explore</span>
         </div>
@@ -222,96 +223,127 @@ useEffect(() => {
       </Swiper>
     </div> */}
 
-    {/* mobile and desktop banner section */}
-    <div className="home-banner">
-      <div className="explore-circle">
-        <span>• Explore</span>
+      {/* mobile and desktop banner section */}
+      <div className="home-banner">
+        <div className="explore-circle">
+          <span>• Explore</span>
+        </div>
+        <span className="banner-line-right" />
+
+        {/* ---------------------------- */}
+        {/* MOBILE SWIPER (below 500px) */}
+        {/* ---------------------------- */}
+        {isMobile ? (
+          <Swiper
+            className="banner-swiper-mobile"
+            modules={[Pagination, Autoplay]}
+            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+          >
+            <SwiperSlide>
+              <div
+                className="banner-image"
+                style={{ backgroundImage: 'url("/assets/mbbnr1.png")' }}
+              >
+                <div className="container banner-text">
+                  <h1>
+                    Explore An Exclusive Lifestyle in the Heart of{" "}
+                    <span>Dubai</span>
+                  </h1>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div
+                className="banner-image"
+                style={{ backgroundImage: 'url("/assets/mbbnr2.png")' }}
+              >
+                <div className="container banner-text">
+                  <h1>
+                    Discover The Luxury Living You <span>Deserve</span>
+                  </h1>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div
+                className="banner-image"
+                style={{ backgroundImage: 'url("/assets/mbbnr3.png")' }}
+              >
+                <div className="container banner-text">
+                  <h1>
+                    Discover The Luxury Living You <span>Deserve</span>
+                  </h1>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        ) : (
+          /* ---------------------------- */
+          /* DESKTOP SWIPER (existing)   */
+          /* ---------------------------- */
+          <Swiper
+            ref={swiperRef}
+            className="banner-swiper"
+            modules={[Pagination, Autoplay]}
+            direction="vertical"
+            pagination={{ clickable: false }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            onSlideChange={handleSlideChange}
+            allowTouchMove={allowTouch}
+          >
+            <SwiperSlide>
+              <div
+                className="banner-image"
+                style={{ backgroundImage: 'url("/assets/bnr1.png")' }}
+              >
+                <div className="container banner-text">
+                  <h1>
+                    Explore An Exclusive Lifestyle in the Heart of{" "}
+                    <span>Dubai</span>
+                  </h1>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div
+                className="banner-image"
+                style={{ backgroundImage: 'url("/assets/bnr2.png")' }}
+              >
+                <div className="container banner-text">
+                  <h1>
+                    Discover The Luxury Living You <span>Deserve</span>
+                  </h1>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div
+                className="banner-image"
+                style={{ backgroundImage: 'url("/assets/bnr3.png")' }}
+              >
+                <div className="container banner-text">
+                  <h1>
+                    Discover The Luxury Living You <span>Deserve</span>
+                  </h1>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        )}
       </div>
-      <span className="banner-line-right" />
-
-      {/* ---------------------------- */}
-      {/* MOBILE SWIPER (below 500px) */}
-      {/* ---------------------------- */}
-      {isMobile ? (
-        <Swiper
-          className="banner-swiper-mobile"
-          modules={[Pagination, Autoplay]}
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          loop={true}
-        >
-          <SwiperSlide>
-            <div className="banner-image" style={{ backgroundImage: 'url("/assets/mbbnr1.png")' }}>
-              <div className="container banner-text">
-                <h1>Explore An Exclusive Lifestyle in the Heart of <span>Dubai</span></h1>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="banner-image" style={{ backgroundImage: 'url("/assets/mbbnr2.png")' }}>
-              <div className="container banner-text">
-                <h1>Discover The Luxury Living You <span>Deserve</span></h1>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="banner-image" style={{ backgroundImage: 'url("/assets/mbbnr3.png")' }}>
-              <div className="container banner-text">
-                <h1>Discover The Luxury Living You <span>Deserve</span></h1>
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      ) : (
-        /* ---------------------------- */
-        /* DESKTOP SWIPER (existing)   */
-        /* ---------------------------- */
-        <Swiper
-          ref={swiperRef}
-          className="banner-swiper"
-          modules={[Pagination, Autoplay]}
-          direction="vertical"
-          pagination={{ clickable: false }}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          loop={true}
-          onSlideChange={handleSlideChange}
-          allowTouchMove={allowTouch}
-        >
-          <SwiperSlide>
-            <div className="banner-image" style={{ backgroundImage: 'url("/assets/bnr1.png")' }}>
-              <div className="container banner-text">
-                <h1>Explore An Exclusive Lifestyle in the Heart of <span>Dubai</span></h1>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="banner-image" style={{ backgroundImage: 'url("/assets/bnr2.png")' }}>
-              <div className="container banner-text">
-                <h1>Discover The Luxury Living You <span>Deserve</span></h1>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="banner-image" style={{ backgroundImage: 'url("/assets/bnr3.png")' }}>
-              <div className="container banner-text">
-                <h1>Discover The Luxury Living You <span>Deserve</span></h1>
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      )}
-    </div>
-
 
       {/* About Section */}
       <div className="about-section">
@@ -327,11 +359,11 @@ useEffect(() => {
                     Our focus on craftsmanship and detailing is a part of our legacy, spanning five 
                     decades. So while others may consider minor details to be minor, we understand 
                     how these little aspects come together to create an extraordinary living 
-                    experience.`
-                  }
+                    experience.`,
+                  },
                 ]}
               />
-              <div className="abt-btm-sec" >
+              <div className="abt-btm-sec">
                 <div className="abt-stat-blk" data-aos="fade-up">
                   <div className="stat-head">
                     <h2>50</h2>
@@ -369,7 +401,7 @@ useEffect(() => {
                   heading: "Our Projects",
                   subHeading: "Explore Our Signature Projects",
                   content:
-                    "Explore every detail about the community you wish to be part of."
+                    "Explore every detail about the community you wish to be part of.",
                 },
               ]}
             />
@@ -379,7 +411,10 @@ useEffect(() => {
                 <div className="project-img">
                   <span className="project-label">1 & 2 BHK</span>
                   {/* <img src="/assets/project1.png" alt="Canalside Marina Residences" /> */}
-                  <img src="/assets/beachside.png" alt="Canalside Marina Residences" />
+                  <img
+                    src="/assets/beachside.png"
+                    alt="Canalside Marina Residences"
+                  />
                 </div>
                 <div className="project-text">
                   <h4>Pearlside Marina Residence</h4>
@@ -391,7 +426,10 @@ useEffect(() => {
               <div className="project-top-blk" data-aos="fade-up">
                 <div className="project-img">
                   <span className="project-label">1,2&3 Bed Apartments</span>
-                  <img src="/assets/aquacrust.png" alt="Canalside Marina Residences" />
+                  <img
+                    src="/assets/aquacrust.png"
+                    alt="Canalside Marina Residences"
+                  />
                 </div>
                 <div className="project-text">
                   <h4>Aquamarine Beach Residences</h4>
@@ -405,34 +443,43 @@ useEffect(() => {
               <div className="project-btm-blk">
                 <div className="project-img">
                   <span className="project-label">1-3 Bed Apartments</span>
-                  <img src="/assets/skypark.png" alt="Pierside Marina Residences" />
+                  <img
+                    src="/assets/skypark.png"
+                    alt="Pierside Marina Residences"
+                  />
                 </div>
-                  <div className="project-text">
-                    <h4>Sobha Skyparks</h4>
-                    <p>Business Bay</p>
-                    <h5>From 2.88M AED</h5>
-                </div>
-              </div>
-              <div className="project-btm-blk">
-                <div className="project-img">
-                  <span className="project-label">1-3 Bed Apartments</span>
-                  <img src="/assets/building2.png" alt="Pierside Marina Residences" />
-                </div>
-                  <div className="project-text">
-                    <h4>Sobha Central</h4>
-                    <p>Siniya Island</p>
-                    <h5>From 1.59M AED</h5>
+                <div className="project-text">
+                  <h4>Sobha Skyparks</h4>
+                  <p>Business Bay</p>
+                  <h5>From 2.88M AED</h5>
                 </div>
               </div>
               <div className="project-btm-blk">
                 <div className="project-img">
                   <span className="project-label">1-3 Bed Apartments</span>
-                  <img src="/assets/building3.png" alt="Pierside Marina Residences" />
+                  <img
+                    src="/assets/building2.png"
+                    alt="Pierside Marina Residences"
+                  />
                 </div>
-                  <div className="project-text">
-                    <h4>Pierside Marina Residences</h4>
-                    <p>Siniya Island</p>
-                    <h5>From 1.59M AED</h5>
+                <div className="project-text">
+                  <h4>Sobha Central</h4>
+                  <p>Siniya Island</p>
+                  <h5>From 1.59M AED</h5>
+                </div>
+              </div>
+              <div className="project-btm-blk">
+                <div className="project-img">
+                  <span className="project-label">1-3 Bed Apartments</span>
+                  <img
+                    src="/assets/building3.png"
+                    alt="Pierside Marina Residences"
+                  />
+                </div>
+                <div className="project-text">
+                  <h4>Pierside Marina Residences</h4>
+                  <p>Siniya Island</p>
+                  <h5>From 1.59M AED</h5>
                 </div>
               </div>
               {/* <div className="project-btm-blk">
@@ -474,7 +521,10 @@ useEffect(() => {
                 <div className="project-img">
                   <span className="project-label">1 & 2 BHK</span>
                   {/* <img src="/assets/project1.png" alt="Canalside Marina Residences" /> */}
-                  <img src="/assets/sobha-central.png" alt="Canalside Marina Residences" />
+                  <img
+                    src="/assets/sobha-central.png"
+                    alt="Canalside Marina Residences"
+                  />
                 </div>
                 <div className="project-text">
                   <h4>Canalside Marina Residences</h4>
@@ -486,7 +536,10 @@ useEffect(() => {
               <div className="project-btm-blk" data-aos="fade-up">
                 <div className="project-img">
                   <span className="project-label">1,2&3 Bed Apartments</span>
-                  <img src="/assets/sobha-aquacrust.png" alt="Canalside Marina Residences" />
+                  <img
+                    src="/assets/sobha-aquacrust.png"
+                    alt="Canalside Marina Residences"
+                  />
                 </div>
                 <div className="project-text">
                   <h4>Sobha Elwood</h4>
@@ -495,29 +548,28 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
 
       {/* Our Specialities Section */}
-      <div className="our-specialities-section">  
+      <div className="our-specialities-section">
         <div className="specialities-outer">
           <div className="container">
-            <TopHeadCnt 
+            <TopHeadCnt
               items={[
                 {
                   heading: "Our Specialities",
                   subHeading: "Why Choose Sobha Hartland",
                   content:
-                    "Experience the new meaning of luxury with Sobha Hartland, Dubai’s best freehold community, positioned in the iconic MBR, just a few minutes away from the world-famous Burj Khalifa."
+                    "Experience the new meaning of luxury with Sobha Hartland, Dubai’s best freehold community, positioned in the iconic MBR, just a few minutes away from the world-famous Burj Khalifa.",
                 },
               ]}
             />
 
             <div className="features-grid" data-aos="fade-up">
               <div className="feature-item">
-                  <div className="icon-wrapper">
+                <div className="icon-wrapper">
                   <img src="/assets/icons/resort.svg" alt="Resort" />
                 </div>
                 <p>Resort themed facilities & amenities</p>
@@ -545,7 +597,6 @@ useEffect(() => {
                 <p>Choice of Apartments, Villas & Townhouses</p>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -555,13 +606,15 @@ useEffect(() => {
         <div className="why-dubai-outer">
           <div className="why-dubai-bg">
             <div className="container">
-              <TopHeadCnt 
-                items={[{
-                  heading: "Why Dubai..",
-                  subHeading: "Why Invest in Dubai",
-                  content:
-                    "Dubai is a haven for real estate investors & home buyers. The tax-free rental yields and the mature & transparent real estate market make it more desirable for everyone from different parts of the world."
-                }]}
+              <TopHeadCnt
+                items={[
+                  {
+                    heading: "Why Dubai..",
+                    subHeading: "Why Invest in Dubai",
+                    content:
+                      "Dubai is a haven for real estate investors & home buyers. The tax-free rental yields and the mature & transparent real estate market make it more desirable for everyone from different parts of the world.",
+                  },
+                ]}
               />
 
               <Swiper
@@ -573,22 +626,22 @@ useEffect(() => {
                 className="whydubaiswipper"
                 data-aos="fade-up"
                 breakpoints={{
-                    0: {
-                      slidesPerView: 1.2,
-                    },
-                    480: {
-                      slidesPerView: 1.5,
-                    },
-                    768: {
-                      slidesPerView: 2.2,
-                    },
-                    1024: {
-                      slidesPerView: 3,
-                    },
-                    1280: {
-                      slidesPerView: 3.5,
-                    },
-                  }}
+                  0: {
+                    slidesPerView: 1.2,
+                  },
+                  480: {
+                    slidesPerView: 1.5,
+                  },
+                  768: {
+                    slidesPerView: 2.2,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                  1280: {
+                    slidesPerView: 3.5,
+                  },
+                }}
               >
                 <SwiperSlide>
                   <p>Strategic Location between East & West</p>
@@ -620,7 +673,7 @@ useEffect(() => {
               <div className="dream-home-text">
                 <h2>Find Your Dream Home Today!</h2>
                 <p>Invest in more than property—invest in your future.</p>
-                  <Button href="/enquire" label="Enquire Now"/>
+                <Button href="/enquire" label="Enquire Now" />
               </div>
             </div>
           </div>
@@ -632,11 +685,10 @@ useEffect(() => {
       </div>
 
       {/* Faq Section */}
-      <FaqSection/>
+      <FaqSection />
 
       {/* Enquire Section */}
-      <EnqSetion/>
-
+      <EnqSetion />
     </main>
   );
 }
