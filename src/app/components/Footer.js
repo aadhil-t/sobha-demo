@@ -45,8 +45,8 @@ export default function Footer() {
                 <li><a href="#">Sobha Central</a></li>
               </ul>
               <ul className='pro-ul'>
-                <li><a href="#">Pierside Marina Residences</a></li>
-                <li><a href="#">Canalside Marina Residences</a></li>
+                <li><a href="#">Sobha Aquacrest</a></li>
+                <li><a href="#">Skyscape</a></li>
                 <li><a href="#">Sobha Elwood</a></li>
               </ul>
             </div>
