@@ -168,6 +168,7 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+
   return (
     <main>
       {/* Banner Section */}
@@ -224,15 +225,13 @@ export default function Home() {
     </div> */}
 
       {/* mobile and desktop banner section */}
-      <div className="home-banner">
+      {/* <div className="home-banner">
         <div className="explore-circle">
           <span>• Explore</span>
         </div>
         <span className="banner-line-right" />
 
-        {/* ---------------------------- */}
-        {/* MOBILE SWIPER (below 500px) */}
-        {/* ---------------------------- */}
+
         {isMobile ? (
           <Swiper
             className="banner-swiper-mobile"
@@ -285,9 +284,7 @@ export default function Home() {
             </SwiperSlide>
           </Swiper>
         ) : (
-          /* ---------------------------- */
-          /* DESKTOP SWIPER (existing)   */
-          /* ---------------------------- */
+
           <Swiper
             ref={swiperRef}
             className="banner-swiper"
@@ -343,7 +340,106 @@ export default function Home() {
             </SwiperSlide>
           </Swiper>
         )}
-      </div>
+      </div> */}
+
+      <div className="home-banner">
+
+  {isMobile ? (
+    /* ---------------- MOBILE SWIPER ---------------- */
+    <Swiper
+      className="banner-swiper-mobile"
+      modules={[Pagination, Autoplay]}
+      pagination={{ clickable: true }}
+      autoplay={{ delay: 4000, disableOnInteraction: false }}
+      loop={true}
+    >
+      <SwiperSlide>
+        <div
+          className="banner-image"
+          style={{ backgroundImage: 'url("/assets/mbbnr1.png")' }}
+        >
+          <div className="container banner-text">
+            <h1>Explore An Exclusive Lifestyle in <span>Dubai</span></h1>
+          </div>
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div
+          className="banner-image"
+          style={{ backgroundImage: 'url("/assets/mbbnr2.png")' }}
+        >
+          <div className="container banner-text">
+            <h1>Discover The Luxury Living You <span>Deserve</span></h1>
+          </div>
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div
+          className="banner-image"
+          style={{ backgroundImage: 'url("/assets/mbbnr3.png")' }}
+        >
+          <div className="container banner-text">
+            <h1>Discover The Luxury Living You <span>Deserve</span></h1>
+          </div>
+        </div>
+      </SwiperSlide>
+    </Swiper>
+
+  ) : (
+    /* ---------------- DESKTOP SWIPER ---------------- */
+    <Swiper
+      ref={swiperRef}
+      className="banner-swiper"
+      modules={[Pagination, Autoplay]}
+      direction="vertical"
+      pagination={{ clickable: false }}
+      autoplay={{ delay: 4000, disableOnInteraction: false }}
+      loop={true}
+      onSlideChange={handleSlideChange}
+      allowTouchMove={allowTouch}
+    >
+      <SwiperSlide>
+        <div
+          className="banner-image"
+          style={{ backgroundImage: 'url("/assets/bnr1.png")' }}
+        >
+          <div className="container banner-text">
+            <h1>Explore An Exclusive Lifestyle in <span>Dubai</span></h1>
+          </div>
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div
+          className="banner-image"
+          style={{ backgroundImage: 'url("/assets/bnr2.png")' }}
+        >
+          <div className="container banner-text">
+            <h1>Discover The Luxury Living You <span>Deserve</span></h1>
+          </div>
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div
+          className="banner-image"
+          style={{ backgroundImage: 'url("/assets/bnr3.png")' }}
+        >
+          <div className="container banner-text">
+            <h1>Discover The Luxury Living You <span>Deserve</span></h1>
+          </div>
+        </div>
+      </SwiperSlide>
+
+    </Swiper>
+  )}
+
+</div>
+
+
+
 
       {/* About Section */}
       <div className="about-section">
@@ -477,7 +573,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="project-text">
-                  <h4>Pierside Marina Residences</h4>
+                  <h4>Sobha Aquacrest</h4>
                   <p>Siniya Island</p>
                   <h5>From 1.59M AED</h5>
                 </div>
@@ -527,7 +623,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="project-text">
-                  <h4>Canalside Marina Residences</h4>
+                  <h4>Skyscape</h4>
                   <p>Siniya Island</p>
                   <h5>From 1.59M AED</h5>
                 </div>
