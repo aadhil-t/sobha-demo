@@ -180,8 +180,8 @@
     align-items: center;
     justify-content: flex-end;
     position: fixed;
-    right: 50px;
-    bottom: 50px;
+    bottom: 90px;
+    right: 35px;
     z-index: 999999;
   }
 
@@ -222,6 +222,7 @@
     position: absolute;
     top: 100%;
     left: 0;
+    top: 30px;  
     background: #ffffff;
     min-width: 200px;
     padding: 10px 0;

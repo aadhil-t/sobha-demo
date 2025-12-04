@@ -48,8 +48,10 @@
         }
         .blog-detail-btm{
             padding-top: 10rem;
+            padding-bottom: 10rem;
             @media (max-width: 1024px) {
                 padding-top: 4rem;
+                padding-bottom: 2rem;
             }
             .blog-head{
                 display: flex;
