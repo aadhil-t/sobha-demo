@@ -64,13 +64,15 @@ export default function Footer() {
         </div>
 
         <div className="disclaimer" data-aos="fade-up">
-          <strong>Disclaimer:</strong> All information provided on this website is for informational 
-          purposes only and does not constitute an offer, solicitation, or advice to buy or sell real 
-          estate. Prices, availability, and project details are subject to change without notice and 
-          may vary based on market conditions and developer policies. While we strive to ensure the 
-          accuracy of the content, we do not guarantee the completeness or reliability of the information 
-          presented. Prospective buyers or investors are encouraged to conduct their own due diligence and 
-          consult legal or financial advisors. 
+          <strong>Disclaimer:</strong> This website is owned and managed by an authorized channel partner. 
+                  All information provided is for general guidance only and does not constitute an offer or 
+                  solicitation. Prices, availability, and project details are subject to change without notice. 
+                  Images and visuals are indicative and may not represent the actual project. While we strive 
+                  for accuracy, no guarantee is made regarding the completeness or reliability of the content. 
+                  Users are advised to verify all information independently and consult appropriate legal or 
+                  financial advisors before making any decisions. For the most accurate, updated, and verified 
+                  details regarding pricing, availability, specifications, and services, please contact us directly 
+                  through the contact information provided on this website. 
         </div>
 
         <div className="bottomBar">

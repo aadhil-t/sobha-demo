@@ -46,6 +46,10 @@ export default function Home() {
   //   }
   // };
 
+
+  
+
+
   const swiperRef = useRef(null);
   // const [allowTouch, setAllowTouch] = useState(window.innerWidth > 768);
 
@@ -785,6 +789,10 @@ export default function Home() {
 
       {/* Enquire Section */}
       <EnqSetion />
+
+
+
+
     </main>
   );
 }
