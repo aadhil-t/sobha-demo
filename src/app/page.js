@@ -773,7 +773,11 @@ export default function Home() {
               <div className="dream-home-text">
                 <h2>Find Your Dream Home Today!</h2>
                 <p>Invest in more than property—invest in your future.</p>
-                <Button href="/enquire" label="Enquire Now" />
+                   <a className="enquire-btn popup-with-form"
+             href="#test-form" label="Enquire Now"
+               data-form="connect">
+                Enquire Now
+            </a>
               </div>
             </div>
           </div>
